@@ -1,18 +1,18 @@
-# 👋 Hi, I'm Anudeep Sai Gottapu  
+#  Hi, I'm Anudeep Sai Gottapu  
 
-📍 Robotics Engineer | MS in Robotics and Autonomous Systems @ Arizona State University  
+ Robotics Engineer | MS in Robotics and Autonomous Systems @ Arizona State University  
 📧 [Email](mailto:agottap1@asu.edu) | 🌐 [LinkedIn](https://www.linkedin.com/in/anudeep-sai-gottapu-9641b4138)  
 
 ---
 
-## 🚀 About Me  
+##  About Me  
 I am a **Robotics Engineer** specializing in developing and training deep neural networks for path generation and integrating ML policies into robotic systems for **sim-to-real deployment**. My experience spans **robot perception (SLAM, mapping, sensor fusion)**, **control systems**, and **AI/ML-driven robotics**.  
 
 I am passionate about **bridging AI and robotics**, building intelligent agents, and deploying real-world robotic systems that are safe, reliable, and efficient.  
 
 ---
 
-## 🎓 Education  
+##  Education  
 
 **Arizona State University** (Aug 2024 – May 2026)  
 *Master of Science, Robotics and Autonomous Systems (Tempe, AZ, USA)*  
@@ -25,7 +25,7 @@ I am passionate about **bridging AI and robotics**, building intelligent agents,
 
 ---
 
-## 🛠️ Skills  
+##  Skills  
 
 - **Robotics & Simulation**: ROS/ROS2, MoveIt, MuJoCo, PyBullet, Isaac Gym, OpenGL  
 - **Programming**: Python, C, C++, Java, MATLAB, SQL  
@@ -38,7 +38,7 @@ I am passionate about **bridging AI and robotics**, building intelligent agents,
 
 ---
 
-## 💼 Experience  
+##  Experience  
 
 ### 🔹 Research Associate — Logos Robotics Lab, Arizona State University (Jun 2025 – Present)  
 - Implemented **Vision-Language Action (VLA) models** for collision-free robot manipulation  
@@ -63,7 +63,7 @@ I am passionate about **bridging AI and robotics**, building intelligent agents,
 
 ---
 
-## 📂 Projects  
+##  Projects  
 
 - **LLM Alignment via Direct Preference Optimization (DPO)** (Feb – Apr 2025)  
   - Improved LLM alignment accuracy by **25.8%** on Anthropic HH-RLHF dataset  
@@ -75,7 +75,7 @@ I am passionate about **bridging AI and robotics**, building intelligent agents,
 
 ---
 
-## 🌱 Current Focus  
+##  Current Focus  
 - Safe deployment of **Vision-Language Action models** in robotic manipulation  
 - Reinforcement Learning and policy alignment for autonomous systems  
 - Bridging **AI foundations** with **robotic applications**  
