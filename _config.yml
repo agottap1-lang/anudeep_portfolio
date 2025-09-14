@@ -3,4 +3,8 @@ title: Anudeep Sai Gottapu
 #descriptio text below image
 #show_downloads: true
 #theme: jekyll_theme-minimal
-theme: minimal
+#theme: minimal
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme # add this if not already present
+
