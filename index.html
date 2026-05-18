@@ -1,28 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anudeep Sai Gottapu — Robotics &amp; AI Engineer</title>
+  <title>Anudeep Sai Gottapu &mdash; Robotics &amp; AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:#0f172a; --navy2:#1e293b; --accent:#3b82f6;
-      --text:#1e293b; --muted:#64748b; --light:#f1f5f9;
-      --border:#e2e8f0; --white:#ffffff; --radius:10px;
-    }
+    :root { --navy:#0f172a; --navy2:#1e293b; --accent:#3b82f6; --text:#1e293b; --muted:#64748b; --light:#f8fafc; --border:#e2e8f0; --white:#ffffff; --radius:10px; }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',system-ui,sans-serif; color:var(--text); background:var(--white); line-height:1.7; font-size:16px; }
+    body { font-family:Inter,system-ui,sans-serif; color:var(--text); background:var(--white); line-height:1.7; font-size:16px; }
     nav { position:sticky; top:0; z-index:100; background:var(--navy); border-bottom:1px solid rgba(255,255,255,0.06); }
     .nav-inner { max-width:1100px; margin:auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:58px; }
-    .nav-brand { color:#fff; font-weight:700; font-size:1rem; text-decoration:none; letter-spacing:-0.01em; }
-    .nav-links { display:flex; gap:6px; list-style:none; flex-wrap:wrap; }
+    .nav-brand { color:#fff; font-weight:700; font-size:1rem; text-decoration:none; }
+    .nav-links { display:flex; gap:6px; list-style:none; }
     .nav-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.82rem; font-weight:500; padding:5px 11px; border-radius:6px; transition:background 0.15s,color 0.15s; }
     .nav-links a:hover { background:rgba(255,255,255,0.1); color:#fff; }
-    .hero { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; padding:80px 24px 72px; text-align:center; }
+    .hero { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; padding:88px 24px 80px; text-align:center; }
     .hero h1 { font-size:clamp(2rem,4.5vw,3rem); font-weight:700; letter-spacing:-0.03em; line-height:1.15; margin-bottom:10px; }
     .hero-subtitle { font-size:1.05rem; color:rgba(255,255,255,0.72); margin-bottom:8px; }
     .hero-badge { display:inline-block; background:rgba(59,130,246,0.25); color:#93c5fd; font-size:0.78rem; font-weight:600; padding:4px 14px; border-radius:999px; border:1px solid rgba(59,130,246,0.4); margin-bottom:28px; }
@@ -34,71 +30,78 @@
     .btn-outline { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.4); }
     .btn-outline:hover { background:rgba(255,255,255,0.08); }
     .container { max-width:1100px; margin:auto; padding:0 24px; }
-    section { padding:64px 0; }
+    section { padding:80px 0; }
     section:nth-child(even) { background:var(--light); }
-    .section-label { display:flex; align-items:center; gap:12px; margin-bottom:36px; }
-    .section-label h2 { font-size:1.55rem; font-weight:700; color:var(--navy); letter-spacing:-0.02em; }
+    .section-label { display:flex; align-items:center; gap:14px; margin-bottom:44px; }
+    .section-label h2 { font-size:1.5rem; font-weight:700; color:var(--navy); letter-spacing:-0.02em; white-space:nowrap; }
     .section-label-line { flex:1; height:2px; background:var(--border); border-radius:2px; }
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
-    @media(max-width:680px){.about-grid{grid-template-columns:1fr;}}
-    .about-text p { color:var(--muted); font-size:0.97rem; margin-bottom:12px; }
+    .about-grid { display:grid; grid-template-columns:3fr 2fr; gap:48px; align-items:start; }
+    .about-text p { color:var(--muted); font-size:0.97rem; margin-bottom:16px; line-height:1.8; }
     .about-text p strong { color:var(--text); }
     .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .stat-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:18px 20px; text-align:center; }
-    .stat-card .stat-number { font-size:1.55rem; font-weight:700; color:var(--accent); display:block; }
-    .stat-card .stat-desc { font-size:0.76rem; color:var(--muted); font-weight:500; margin-top:3px; }
+    .stat-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center; }
+    .stat-card .stat-number { font-size:1.5rem; font-weight:700; color:var(--accent); display:block; }
+    .stat-card .stat-desc { font-size:0.75rem; color:var(--muted); font-weight:500; margin-top:4px; }
     .edu-cards { display:flex; flex-direction:column; gap:20px; }
-    .edu-card { background:var(--white); border:1.5px solid var(--border); border-left:4px solid var(--accent); border-radius:var(--radius); padding:22px 26px; }
+    .edu-card { background:var(--white); border:1.5px solid var(--border); border-left:4px solid var(--accent); border-radius:var(--radius); padding:24px 28px; }
     .edu-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
     .edu-card h3 { font-size:1.05rem; font-weight:700; color:var(--navy); }
     .edu-date { font-size:0.8rem; background:var(--light); color:var(--muted); padding:3px 10px; border-radius:999px; white-space:nowrap; font-weight:500; }
-    .edu-degree { font-size:0.92rem; color:var(--accent); font-weight:600; margin-bottom:10px; }
+    .edu-degree { font-size:0.92rem; color:var(--accent); font-weight:600; margin-bottom:12px; }
     .edu-card ul { padding-left:18px; }
-    .edu-card li { font-size:0.87rem; color:var(--muted); margin-bottom:4px; }
+    .edu-card li { font-size:0.86rem; color:var(--muted); margin-bottom:4px; }
     .thesis-highlight { background:linear-gradient(to right,rgba(59,130,246,0.07),transparent); border:1.5px solid rgba(59,130,246,0.25); border-radius:8px; padding:12px 16px; margin-top:12px; }
     .thesis-highlight .th-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:4px; }
     .thesis-highlight p { font-size:0.88rem; color:var(--text); font-weight:500; }
-    .thesis-highlight .th-advisor { font-size:0.8rem; color:var(--muted); margin-top:3px; }
-    .thesis-card { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; border-radius:14px; padding:36px 40px; position:relative; overflow:hidden; }
-    .thesis-card::before { content:''; position:absolute; top:-40px; right:-40px; width:200px; height:200px; background:rgba(59,130,246,0.12); border-radius:50%; }
+    .thesis-highlight .th-advisor { font-size:0.78rem; color:var(--muted); margin-top:4px; }
+    .thesis-card { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; border-radius:14px; padding:40px 44px; position:relative; overflow:hidden; }
+    .thesis-card::before { content:''; position:absolute; top:-40px; right:-40px; width:220px; height:220px; background:rgba(59,130,246,0.1); border-radius:50%; }
     .tc-eyebrow { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#93c5fd; margin-bottom:10px; }
-    .thesis-card h3 { font-size:1.35rem; font-weight:700; line-height:1.3; margin-bottom:14px; max-width:720px; }
-    .tc-meta { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px; }
-    .tc-meta span { font-size:0.83rem; color:rgba(255,255,255,0.65); }
-    .tc-body { font-size:0.95rem; color:rgba(255,255,255,0.8); max-width:780px; line-height:1.75; margin-bottom:16px; }
+    .thesis-card h3 { font-size:1.35rem; font-weight:700; line-height:1.3; margin-bottom:14px; max-width:760px; }
+    .tc-meta { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:18px; }
+    .tc-meta span { font-size:0.83rem; color:rgba(255,255,255,0.6); }
+    .tc-body { font-size:0.94rem; color:rgba(255,255,255,0.82); max-width:780px; line-height:1.75; margin-bottom:24px; }
+    .tc-results { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+    .tc-result { background:rgba(59,130,246,0.18); border:1px solid rgba(59,130,246,0.35); border-radius:10px; padding:18px 22px; flex:1; min-width:155px; }
+    .tc-result-num { font-size:1.6rem; font-weight:700; color:#93c5fd; line-height:1; }
+    .tc-result-label { font-size:0.75rem; color:rgba(255,255,255,0.6); margin-top:6px; line-height:1.45; }
+    .tc-contrib { list-style:none; padding:0; margin:0 0 24px; }
+    .tc-contrib li { font-size:0.88rem; color:rgba(255,255,255,0.82); padding:9px 0 9px 22px; border-bottom:1px solid rgba(255,255,255,0.07); position:relative; line-height:1.6; }
+    .tc-contrib li:last-child { border-bottom:none; }
+    .tc-contrib li::before { content:'\2192'; position:absolute; left:0; color:#93c5fd; font-weight:700; }
     .tc-tags { display:flex; gap:8px; flex-wrap:wrap; }
-    .tc-tag { background:rgba(59,130,246,0.25); color:#93c5fd; font-size:0.77rem; font-weight:600; padding:4px 12px; border-radius:999px; border:1px solid rgba(59,130,246,0.35); }
+    .tc-tag { background:rgba(59,130,246,0.22); color:#93c5fd; font-size:0.77rem; font-weight:600; padding:4px 12px; border-radius:999px; border:1px solid rgba(59,130,246,0.35); }
     .timeline { position:relative; padding-left:28px; }
     .timeline::before { content:''; position:absolute; left:7px; top:8px; bottom:8px; width:2px; background:var(--border); border-radius:2px; }
     .timeline-item { position:relative; margin-bottom:28px; }
     .timeline-item::before { content:''; position:absolute; left:-24px; top:8px; width:12px; height:12px; border-radius:50%; background:var(--white); border:2.5px solid var(--accent); }
     .timeline-item.current::before { background:var(--accent); }
-    .exp-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px 24px; transition:border-color 0.15s,box-shadow 0.15s; }
+    .exp-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:22px 26px; transition:border-color 0.15s,box-shadow 0.15s; }
     .exp-card:hover { border-color:var(--accent); box-shadow:0 4px 20px rgba(59,130,246,0.08); }
     .exp-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
     .exp-header h3 { font-size:1rem; font-weight:700; color:var(--navy); }
     .exp-date { font-size:0.78rem; background:var(--light); color:var(--muted); padding:3px 10px; border-radius:999px; font-weight:500; white-space:nowrap; }
-    .exp-org { font-size:0.87rem; color:var(--accent); font-weight:600; margin-bottom:12px; }
+    .exp-org { font-size:0.87rem; color:var(--accent); font-weight:600; margin-bottom:14px; }
     .exp-card ul { padding-left:18px; }
-    .exp-card li { font-size:0.87rem; color:var(--muted); margin-bottom:5px; }
+    .exp-card li { font-size:0.87rem; color:var(--muted); margin-bottom:7px; line-height:1.6; }
     .exp-card li strong { color:var(--text); }
     .current-badge { display:inline-block; background:rgba(34,197,94,0.1); color:#16a34a; font-size:0.7rem; font-weight:700; padding:2px 9px; border-radius:999px; border:1px solid rgba(34,197,94,0.3); margin-left:8px; vertical-align:middle; }
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:22px; }
-    .project-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; flex-direction:column; transition:border-color 0.15s,box-shadow 0.15s,transform 0.15s; }
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:24px; }
+    .project-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:26px; display:flex; flex-direction:column; transition:border-color 0.15s,box-shadow 0.15s,transform 0.15s; }
     .project-card:hover { border-color:var(--accent); box-shadow:0 6px 24px rgba(59,130,246,0.1); transform:translateY(-2px); }
     .pc-icon { width:40px; height:40px; background:rgba(59,130,246,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:14px; }
-    .project-card h3 { font-size:0.97rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
-    .pc-date { font-size:0.77rem; color:var(--muted); margin-bottom:10px; }
-    .project-card p { font-size:0.87rem; color:var(--muted); flex:1; line-height:1.65; margin-bottom:14px; }
+    .project-card h3 { font-size:0.97rem; font-weight:700; color:var(--navy); margin-bottom:4px; line-height:1.4; }
+    .pc-date { font-size:0.75rem; color:var(--muted); margin-bottom:12px; }
+    .project-card p { font-size:0.87rem; color:var(--muted); flex:1; line-height:1.7; margin-bottom:14px; }
     .pc-metrics { margin-bottom:12px; }
-    .pc-metric { display:inline-flex; align-items:center; gap:5px; font-size:0.8rem; font-weight:600; color:var(--accent); background:rgba(59,130,246,0.08); padding:3px 10px; border-radius:999px; margin:2px 3px 2px 0; }
-    .pc-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .pc-metric { display:inline-flex; align-items:center; gap:5px; font-size:0.79rem; font-weight:600; color:var(--accent); background:rgba(59,130,246,0.08); padding:3px 10px; border-radius:999px; margin:2px 3px 2px 0; }
+    .pc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; }
     .pc-tag { font-size:0.73rem; font-weight:500; background:var(--light); color:var(--muted); padding:3px 9px; border-radius:999px; border:1px solid var(--border); }
-    .pc-paper { display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:0.8rem; font-weight:600; color:var(--accent); text-decoration:none; border:1.5px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.06); padding:5px 12px; border-radius:8px; transition:background 0.15s,border-color 0.15s; }
+    .pc-paper { display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:0.79rem; font-weight:600; color:var(--accent); text-decoration:none; border:1.5px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.06); padding:5px 12px; border-radius:8px; transition:background 0.15s,border-color 0.15s; }
     .pc-paper:hover { background:rgba(59,130,246,0.13); border-color:rgba(59,130,246,0.6); }
     .skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
-    .skill-group { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:18px 20px; }
-    .skill-group h3 { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:11px; }
+    .skill-group { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px 22px; }
+    .skill-group h3 { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:12px; }
     .skill-tags { display:flex; flex-wrap:wrap; gap:6px; }
     .skill-tag { font-size:0.8rem; font-weight:500; background:var(--light); color:var(--text); padding:4px 10px; border-radius:6px; border:1px solid var(--border); }
     .contact-section { background:var(--navy); }
@@ -109,9 +112,10 @@
     .contact-card:hover { background:rgba(255,255,255,0.09); border-color:rgba(255,255,255,0.25); }
     .cc-icon { font-size:1.3rem; }
     .cc-label { font-size:0.75rem; color:rgba(255,255,255,0.5); font-weight:500; }
-    .cc-value { font-size:0.9rem; font-weight:600; color:#fff; }
+    .cc-value { font-size:0.9rem; font-weight:600; }
     footer { background:var(--navy); border-top:1px solid rgba(255,255,255,0.06); text-align:center; padding:20px 24px; font-size:0.8rem; color:rgba(255,255,255,0.3); }
-    @media(max-width:600px){section{padding:48px 0;}.thesis-card{padding:24px 20px;}.projects-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+    @media(max-width:680px) { .about-grid { grid-template-columns:1fr; } }
+    @media(max-width:600px) { section { padding:52px 0; } .thesis-card { padding:28px 22px; } .projects-grid { grid-template-columns:1fr; } .nav-links { display:none; } }
   </style>
 </head>
 <body>
@@ -148,15 +152,14 @@
     <div class="section-label"><h2>About Me</h2><div class="section-label-line"></div></div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I build <strong>AI systems for robots that need to work in the real world</strong>, alongside people, in real environments, at scale. My focus is making robots that can see, understand what they are doing, and explain their actions clearly enough for humans to trust them.</p>
-        <p>My graduate research at ASU&rsquo;s LOGOS Robotics Lab asks a direct question: <strong>can AI models like GPT and Gemini judge how clearly a robot communicates its intent through motion?</strong> If yes, we can automate a quality check that today requires human observers, making it possible to test and improve robot behavior at scale. My thesis was approved in April 2026.</p>
-        <p>I have shipped real systems end-to-end: trained and fine-tuned <strong>large language and vision models</strong> (DPO, RLHF, diffusion), built GPU-scale training pipelines on A100 clusters, and deployed manipulation policies on a physical <strong>Franka Emika Panda</strong> robot arm. My background in mechanical engineering means I can work across the full stack, from hardware and CAD all the way through to model training and evaluation.</p>
+        <p>I build <strong>AI systems for robots that work alongside people</strong> in real environments. My focus is on making robots that can see what they are doing, understand their own motion, and communicate their intent clearly enough for humans to trust them.</p>
+        <p>My graduate research at ASU asks whether <strong>frontier AI models like GPT and Gemini can automatically judge how clearly a robot moves</strong>, replacing the need for human observers. My thesis was approved April 2026. I also have hands-on experience in LLM alignment (DPO, RLHF), diffusion model training, GPU-scale ML pipelines (A100, CUDA), and mechanical engineering (CAD, FEA, manufacturing).</p>
       </div>
       <div class="about-stats">
         <div class="stat-card"><span class="stat-number">4+</span><span class="stat-desc">Years Engineering Experience</span></div>
-        <div class="stat-card"><span class="stat-number">2</span><span class="stat-desc">Research Labs @ ASU</span></div>
+        <div class="stat-card"><span class="stat-number">2</span><span class="stat-desc">Research Labs at ASU</span></div>
         <div class="stat-card"><span class="stat-number">11</span><span class="stat-desc">Projects (AI, Robotics, Mech)</span></div>
-        <div class="stat-card"><span class="stat-number">ICRA/<br>CoRL</span><span class="stat-desc">Target Venues</span></div>
+        <div class="stat-card"><span class="stat-number">Apr&nbsp;2026</span><span class="stat-desc">MS Thesis Approved</span></div>
       </div>
     </div>
   </div>
@@ -168,7 +171,7 @@
     <div class="edu-cards">
       <div class="edu-card">
         <div class="edu-header">
-          <h3>Arizona State University &mdash; Tempe, AZ, USA</h3>
+          <h3>Arizona State University &mdash; Tempe, AZ</h3>
           <span class="edu-date">Aug 2024 &ndash; May 2026</span>
         </div>
         <div class="edu-degree">Master of Science &middot; Robotics and Autonomous Systems</div>
@@ -177,10 +180,10 @@
           <p>Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</p>
           <div class="th-advisor">Advisor: Prof. Nakul Gopalan &nbsp;&middot;&nbsp; Committee: Hani ben Amor, Kunal Garg &nbsp;&middot;&nbsp; LOGOS Robotics Lab</div>
         </div>
-        <ul style="margin-top:12px;">
-          <li>Applied Machine Learning &middot; Reinforcement Learning Algorithms &middot; Multi-Robot Systems</li>
-          <li>Mechanics of Micro/Nano Systems (MEMS) &middot; Advanced System Modelling &amp; Control &middot; Linear Algebra for Engineers</li>
-          <li>Battery Science &amp; Engineering &middot; Applied ML for Mechanical Engineering</li>
+        <ul style="margin-top:14px;">
+          <li>Applied Machine Learning &middot; Reinforcement Learning Algorithms &middot; Multi-Robot Systems (MAE 598)</li>
+          <li>Mechanics of Micro/Nano Systems (MAE 519) &middot; Robot Motion Planning (MAE 547) &middot; Advanced System Modelling &amp; Control</li>
+          <li>Linear Algebra for Engineers &middot; Battery Science &amp; Engineering &middot; Applied ML for Mechanical Engineering</li>
         </ul>
       </div>
       <div class="edu-card">
@@ -189,10 +192,9 @@
           <span class="edu-date">Aug 2016 &ndash; Sep 2020</span>
         </div>
         <div class="edu-degree">Bachelor of Technology &middot; Mechanical Engineering</div>
-        <ul style="margin-top:8px;">
-          <li>Data Structures &amp; C++ &middot; Automation and Robotics &middot; Operating Systems &middot; Finite Element Analysis (FEA)</li>
-          <li>Applied Thermodynamics &middot; Mechanics of Materials &middot; Dynamics of Machinery &middot; Fluid Mechanics &amp; Hydraulics</li>
-          <li>Machine Design &middot; Renewable Energy Systems</li>
+        <ul style="margin-top:10px;">
+          <li>Data Structures &amp; Algorithms (C++) &middot; Automation and Robotics &middot; Finite Element Analysis (FEA)</li>
+          <li>Applied Thermodynamics &middot; Mechanics of Materials &middot; Fluid Mechanics &amp; Hydraulics &middot; Machine Design</li>
         </ul>
       </div>
     </div>
@@ -210,31 +212,36 @@
         <span>&#129302; LOGOS Robotics Lab, ASU</span>
         <span>&#128101; Committee: Hani ben Amor &middot; Kunal Garg</span>
       </div>
-
-      <p class="tc-body"><strong style="color:#93c5fd">The problem:</strong> A robot&rsquo;s motion should communicate its intent clearly to anyone watching &mdash; this property is called <em>legibility</em>. Evaluating it today requires human observers, which is slow and hard to scale. This thesis asks: can frontier AI models (Gemini, GPT, Claude) serve as automated proxies for that human judgment?</p>
-
-      <p class="tc-body"><strong style="color:#93c5fd">Contribution 1 &mdash; VLM goal-inference evaluation pipeline:</strong> Robot manipulation videos are sampled into cumulative frame prefixes at selected timepoints and fed to a VLM with a structured prompt. The model returns JSON with goal probabilities (pA / pB), a key visual cue, and a legibility flag. Accuracy is measured against ground-truth labels across <strong style="color:#93c5fd">8 manipulation scenarios</strong> (left-block, right-block, top drawer, bottom drawer &mdash; legible and ambiguous variants).<br>
-      Results &mdash; mean goal-inference accuracy: <strong style="color:#93c5fd">Gemini 3 Pro 67.7% &nbsp;|&nbsp; Claude Opus 4.5 64.5% &nbsp;|&nbsp; GPT-5.4 61.3%</strong>. All three models performed better on legible trajectories than on ambiguous ones, confirming VLMs respond to genuine motion cues.</p>
-
-      <p class="tc-body"><strong style="color:#93c5fd">Contribution 2 &mdash; VLM Best-of-K trajectory ranking for diffusion policies:</strong> A behavior-conditioned diffusion policy (DDPM + classifier-free guidance, &lambda;=2.0) is trained across four behaviors &mdash; <em>legibility, predictability, safety, grounding</em>. At inference, K candidate trajectories are generated with different noise seeds, rendered to frames, and scored by a VLM; the highest-scoring candidate is re-executed. Legibility is quantified as a lateral commitment score L over the first 30% of the trajectory.<br>
-      Results: unguided baseline L=0.919 &rarr; CFG-only L=0.951 &rarr; CFG&thinsp;+&thinsp;VLM reranking <strong style="color:#93c5fd">L=0.955</strong>. Best-of-K scaling (unguided): K=1&thinsp;&rarr;&thinsp;0.732, K=4&thinsp;&rarr;&thinsp;0.779, K=8&thinsp;&rarr;&thinsp;0.797, K=16&thinsp;&rarr;&thinsp;0.806 &mdash; improving monotonically but never reaching a single CFG-guided trajectory (0.834). CFG and VLM reranking are <strong style="color:#93c5fd">complementary</strong>: guidance shapes the candidate pool; VLM selects the best within it.</p>
-
-      <p class="tc-body"><strong style="color:#93c5fd">Contribution 3 &mdash; Cross-model scoring benchmark:</strong> All three VLMs scored the same K=8 candidates across all four behavior dimensions. Predictability received the highest scores (0.67&ndash;0.92); safety the lowest (0.17&ndash;0.37). The relative ranking of behaviors was consistent across model families even though absolute calibration differed &mdash; supporting VLM scoring as a stable qualitative signal.</p>
-
-      <p class="tc-body"><strong style="color:#93c5fd">Environment:</strong> PyBullet physics simulation, simulated Franka Panda arm, Python. Gemini 3 Pro / GPT-5.4 / Claude Opus 4.5 APIs queried via structured prompts with JSON schema enforcement.</p>
-
+      <p class="tc-body">Can AI models like Gemini, GPT, or Claude watch a robot move and judge whether its intent is clear &mdash; replacing human observers? This thesis builds that system and extends it to guide trajectory selection inside diffusion policies.</p>
+      <div class="tc-results">
+        <div class="tc-result">
+          <div class="tc-result-num">67.7%</div>
+          <div class="tc-result-label">Goal-inference accuracy<br>Gemini 3 Pro (best of 3 VLMs)</div>
+        </div>
+        <div class="tc-result">
+          <div class="tc-result-num">L&nbsp;=&nbsp;0.955</div>
+          <div class="tc-result-label">Legibility score<br>CFG + VLM reranking</div>
+        </div>
+        <div class="tc-result">
+          <div class="tc-result-num">L&nbsp;=&nbsp;0.806</div>
+          <div class="tc-result-label">Best-of-16 VLM selection<br>(from 0.732 unguided)</div>
+        </div>
+      </div>
+      <ul class="tc-contrib">
+        <li>VLM goal-inference pipeline using cumulative prefix-frame prompting &mdash; tested on 8 robot manipulation scenarios (legible and ambiguous variants), structured JSON outputs (pA, pB, visual cue, legibility flag)</li>
+        <li>Behavior-conditioned diffusion policy (DDPM + classifier-free guidance, &lambda;=2.0) trained across legibility, predictability, safety, and grounding behaviors in PyBullet on a simulated Franka Panda arm</li>
+        <li>5-stage Best-of-K trajectory ranking: generate K candidates &rarr; render frames &rarr; VLM score &rarr; re-execute best; legibility improves monotonically with K</li>
+        <li>Cross-model benchmark across Gemini 3 Pro, GPT-5.4, Claude Opus 4.5 &mdash; CFG and VLM reranking are complementary, not interchangeable</li>
+      </ul>
       <div class="tc-tags">
         <span class="tc-tag">Vision-Language Models</span>
         <span class="tc-tag">Robot Motion Legibility</span>
-        <span class="tc-tag">Goal Inference</span>
-        <span class="tc-tag">Diffusion Policy (DDPM)</span>
-        <span class="tc-tag">Classifier-Free Guidance</span>
+        <span class="tc-tag">Diffusion Policy</span>
         <span class="tc-tag">Best-of-K Reranking</span>
         <span class="tc-tag">Prefix-Frame Prompting</span>
-        <span class="tc-tag">Gemini 3 Pro / GPT-5.4 / Claude</span>
-        <span class="tc-tag">PyBullet / Franka Panda</span>
-        <span class="tc-tag">Human-Robot Interaction</span>
-        <span class="tc-tag">Python / PyTorch</span>
+        <span class="tc-tag">Gemini &middot; GPT &middot; Claude</span>
+        <span class="tc-tag">PyBullet &middot; Franka Panda</span>
+        <span class="tc-tag">Python</span>
       </div>
     </div>
   </div>
@@ -251,14 +258,12 @@
             <h3>Research Associate <span class="current-badge">Current</span></h3>
             <span class="exp-date">Jun 2025 &ndash; Present</span>
           </div>
-          <div class="exp-org">Logos Robotics Lab &middot; Arizona State University, Tempe</div>
+          <div class="exp-org">LOGOS Robotics Lab &middot; Arizona State University, Tempe</div>
           <ul>
-            <li>Built a <strong>VLM-based robot motion legibility evaluation pipeline</strong> using cumulative prefix-frame prompting &mdash; queries Gemini 3 Pro, GPT-5.4, and Claude Opus 4.5 with structured JSON prompts to infer robot goals from partial trajectory observations; achieved <strong>67.7% mean goal-inference accuracy</strong> (Gemini 3 Pro, highest across three frontier models)</li>
-            <li>Trained a <strong>behavior-conditioned diffusion policy (DDPM)</strong> with classifier-free guidance (&lambda;=2.0) across four behavior categories &mdash; legibility, predictability, safety, grounding &mdash; in PyBullet simulation on a Franka Panda arm; defined formal evaluation metrics: lateral commitment score L, path efficiency E, obstacle clearance C, waypoint proximity G</li>
-            <li>Designed and implemented a <strong>5-stage Best-of-K VLM trajectory ranking pipeline</strong>: generate K candidates via different noise seeds &rarr; render to image sequences &rarr; VLM scores with behavior-specific prompts &rarr; re-execute top-ranked trajectory; demonstrated CFG and VLM reranking are complementary (CFG+VLM: L=0.955 vs unguided baseline L=0.919)</li>
-            <li>Ran <strong>cross-model ablations</strong> comparing three frontier VLMs (Gemini 3 Pro, GPT-5.4, Claude Opus 4.5) on 8 robot manipulation videos across legible and ambiguous motion variants; showed VLMs consistently score predictability highest (0.67&ndash;0.92) and safety lowest (0.17&ndash;0.37)</li>
-            <li>Designed prompt templates with <strong>structured JSON schema enforcement</strong> (pA, pB probabilities, visual cue field, legibility flag) for consistent automated parsing across thousands of VLM API calls</li>
-            <li>Thesis approved <strong>April 2026</strong>; committee: Prof. Nakul Gopalan (Chair), Hani ben Amor, Kunal Garg</li>
+            <li>Built a <strong>VLM goal-inference evaluation pipeline</strong> using prefix-frame prompting; benchmarked Gemini 3 Pro (67.7%), Claude Opus 4.5 (64.5%), and GPT-5.4 (61.3%) on 8 robot manipulation videos</li>
+            <li>Trained a <strong>behavior-conditioned diffusion policy (DDPM + CFG, &lambda;=2.0)</strong> across legibility, predictability, safety, and grounding in PyBullet on a simulated Franka Panda arm</li>
+            <li>Designed a 5-stage <strong>Best-of-K VLM trajectory ranking pipeline</strong>; CFG + VLM reranking achieved <strong>L=0.955</strong> legibility vs. unguided baseline of 0.919</li>
+            <li>Designed <strong>structured JSON prompt schemas</strong> (pA/pB probabilities, visual cue, legibility flag) for automated parsing across thousands of VLM API calls; thesis approved April 2026</li>
           </ul>
         </div>
       </div>
@@ -271,11 +276,9 @@
           </div>
           <div class="exp-org">Yang Lab &middot; Arizona State University, Tempe</div>
           <ul>
-            <li>Designed a rotational photopolymer system using <strong>Computed Axial Lithography (CAL)</strong> and tomographic reconstruction algorithms &mdash; enabling rapid, support-free 3D fabrication</li>
-            <li>Developed <strong>voxelization algorithms</strong> (Python &amp; MATLAB) for 3D model processing in a DMD-based volumetric printer</li>
-            <li>Implemented <strong>sinogram generation pipelines</strong> in Python/NumPy for DMD optical control, improving real-time accuracy</li>
-            <li>Conducted survey and analysis of fabrication methods, materials, and sensing principles of <strong>soft MEMS actuators</strong></li>
-            <li>Delivered presentation on <strong>RLHF-based LiDAR data processing and policy alignment with DPO</strong></li>
+            <li>Built the computational backend for a <strong>DMD-based Computed Axial Lithography (CAL)</strong> volumetric 3D printer &mdash; voxelization algorithms in Python &amp; MATLAB and sinogram generation pipelines for optical control</li>
+            <li>Surveyed fabrication methods, materials, and sensing principles of <strong>soft MEMS actuators</strong> (piezoresistive, capacitive, piezoelectric; elastomeric composites, PVDF)</li>
+            <li>Delivered technical presentation on <strong>RLHF-based LiDAR data processing and DPO policy alignment</strong></li>
           </ul>
         </div>
       </div>
@@ -288,12 +291,10 @@
           </div>
           <div class="exp-org">Aparna Craft Exteriors &middot; Hyderabad, India</div>
           <ul>
-            <li>Drove R&amp;D initiatives via <strong>3D printing and CNC machining</strong> prototyping; reduced development time by <strong>20%</strong> through vendor management and material procurement</li>
-            <li>Researched emerging robotic technologies: <strong>SCADA, FANUC, KUKA, ABB</strong> arms for manufacturing automation</li>
-            <li>Applied <strong>Lean Manufacturing</strong> principles (5S, Kaizen, APQP, SPC, FMEA) &mdash; achieved <strong>10% increase in OEE</strong>, <strong>35% productivity increase</strong>, <strong>25% downtime reduction</strong></li>
-            <li>Integrated automated inspection and root-cause analysis systems; reduced order fulfillment errors by <strong>12%</strong></li>
-            <li>Tested new facade fabrication techniques for projects worth <strong>$2.8M</strong>; secured <strong>~$360K</strong> in additional contracts</li>
-            <li>Mentored junior engineers in SOPs, EHS compliance, and technical documentation</li>
+            <li>Drove R&amp;D via <strong>3D printing and CNC machining</strong> prototyping; reduced development time by 20% through vendor management and material procurement</li>
+            <li>Researched industrial automation technologies &mdash; <strong>SCADA, FANUC, KUKA, ABB</strong> systems for manufacturing integration</li>
+            <li>Applied <strong>Lean Manufacturing</strong> principles (5S, Kaizen, APQP, SPC, FMEA); achieved 10% OEE increase, 35% productivity improvement, 25% downtime reduction</li>
+            <li>Tested facade fabrication techniques for projects worth <strong>$2.8M</strong>; secured ~$360K in contracts; mentored junior engineers in SOPs and EHS compliance</li>
           </ul>
         </div>
       </div>
@@ -306,11 +307,9 @@
           </div>
           <div class="exp-org">Aparna Craft Exteriors &middot; Hyderabad, India</div>
           <ul>
-            <li>Used Orgadata and AutoCAD to create production files and assembly drawings with <strong>GD&amp;T</strong> &mdash; streamlined manufacturing by <strong>25%</strong>, improved accuracy by <strong>30%</strong></li>
-            <li>Executed cost-saving design modifications in <strong>SolidWorks</strong>; updated BOMs in PLM, reducing production costs by <strong>10%</strong></li>
-            <li>Redesigned production layouts via AutoCAD and DOE: <strong>50% increase in space utilization</strong>, <strong>35% improvement in production efficiency</strong></li>
-            <li>Optimized parts and assemblies to reduce mass by <strong>15%</strong> and extend product lifetime; managed design iterations via PDM systems</li>
-            <li>Verified manufacturability and system compatibility for <strong>30+ facade projects</strong> nationwide</li>
+            <li>Created production files and assembly drawings in <strong>Orgadata &amp; AutoCAD</strong> with GD&amp;T; streamlined manufacturing by 25%, improved accuracy by 30%</li>
+            <li>Executed cost-saving design modifications in <strong>SolidWorks</strong>; updated BOMs in PLM, reducing costs by 10%; redesigned layouts for 50% better space utilization</li>
+            <li>Verified manufacturability for <strong>30+ facade projects</strong> nationwide; managed design iterations via PDM systems</li>
           </ul>
         </div>
       </div>
@@ -328,82 +327,81 @@
         <div class="pc-icon">&#129302;</div>
         <h3>VLM-Based Robot Motion Legibility Evaluation</h3>
         <div class="pc-date">MS Thesis &middot; LOGOS Robotics Lab, ASU &middot; 2024&ndash;2026</div>
-        <p>Built an end-to-end VLM evaluation pipeline to test whether frontier AI models can judge how clearly a robot communicates its intent through motion &mdash; replacing the need for human observers. Robot manipulation videos are broken into <strong>cumulative frame prefixes</strong> at selected timepoints and sent to a VLM with a structured prompt requesting goal probabilities (pA/pB), a visual cue, and a legibility flag (JSON output). Accuracy is measured against ground-truth labels across <strong>8 task scenarios</strong> (left/right-block pick, top/bottom drawer &mdash; legible and ambiguous variants).</p>
+        <p>Built a pipeline to test whether frontier AI models can judge how clearly a robot communicates its intent through motion. Videos are split into cumulative frame prefixes and fed to a VLM with structured prompts requesting goal probabilities and legibility judgment. Evaluated across 8 manipulation scenarios (legible and ambiguous variants).</p>
         <div class="pc-metrics">
           <span class="pc-metric">Gemini 3 Pro: 67.7%</span>
-          <span class="pc-metric">Claude Opus 4.5: 64.5%</span>
+          <span class="pc-metric">Claude: 64.5%</span>
           <span class="pc-metric">GPT-5.4: 61.3%</span>
         </div>
-        <div class="pc-tags"><span class="pc-tag">Vision-Language Models</span><span class="pc-tag">Robot Legibility</span><span class="pc-tag">Goal Inference</span><span class="pc-tag">Prefix-Frame Prompting</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Gemini API</span><span class="pc-tag">GPT API</span><span class="pc-tag">Python</span></div>
+        <div class="pc-tags"><span class="pc-tag">VLMs</span><span class="pc-tag">Robot Legibility</span><span class="pc-tag">Goal Inference</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Python</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#127919;</div>
         <h3>VLM Best-of-K Trajectory Ranking for Diffusion Policies</h3>
         <div class="pc-date">MS Thesis &middot; LOGOS Robotics Lab, ASU &middot; 2025&ndash;2026</div>
-        <p>Designed and implemented a 5-stage trajectory selection pipeline: a behavior-conditioned <strong>diffusion policy (DDPM)</strong> with <strong>classifier-free guidance (&lambda;=2.0)</strong> generates K candidate trajectories using different noise seeds &rarr; each is rendered to an image sequence &rarr; a VLM scores each with a behavior-specific prompt &rarr; the highest-scoring candidate is re-executed. Trained across 4 behavior categories: <em>legibility, predictability, safety, grounding</em>. Legibility is measured as lateral commitment L over the first 30% of the trajectory.</p>
+        <p>Behavior-conditioned diffusion policy (DDPM + classifier-free guidance) generates K candidate trajectories via different noise seeds. Each is rendered to frames and scored by a VLM across legibility, predictability, safety, and grounding. The highest-scoring candidate is re-executed.</p>
         <div class="pc-metrics">
-          <span class="pc-metric">CFG+VLM: L=0.955 vs baseline 0.919</span>
-          <span class="pc-metric">Best-of-16: L=0.806 (from 0.732)</span>
-          <span class="pc-metric">CFG &amp; VLM are complementary</span>
+          <span class="pc-metric">CFG+VLM: L=0.955</span>
+          <span class="pc-metric">Best-of-16: L=0.806</span>
         </div>
-        <div class="pc-tags"><span class="pc-tag">Diffusion Policy</span><span class="pc-tag">Classifier-Free Guidance</span><span class="pc-tag">Best-of-K Reranking</span><span class="pc-tag">Robot Legibility</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Franka Panda</span><span class="pc-tag">Python</span><span class="pc-tag">VLM Scoring</span></div>
+        <div class="pc-tags"><span class="pc-tag">Diffusion Policy</span><span class="pc-tag">CFG</span><span class="pc-tag">Best-of-K</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Python</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#129504;</div>
         <h3>LLM Alignment via Direct Preference Optimization (DPO)</h3>
         <div class="pc-date">Feb &ndash; Apr 2025</div>
-        <p>Implemented SFT + DPO preference-based policy alignment on LLMs using the Anthropic HH-RLHF dataset. Optimized distributed GPU training on A100 with AdamW, cosine LR scheduling, gradient accumulation, and checkpoint recovery. Prepared for LoRA, FSDP, and model parallelism scaling.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#9650; 25.8% alignment accuracy</span><span class="pc-metric">&#9650; 22% faster training</span></div>
-        <div class="pc-tags"><span class="pc-tag">DPO</span><span class="pc-tag">RLHF</span><span class="pc-tag">LoRA</span><span class="pc-tag">FSDP</span><span class="pc-tag">A100 GPU</span><span class="pc-tag">HuggingFace</span></div>
-        <a class="pc-paper" href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener">&#128196; Rafailov et al. (2023) &mdash; Direct Preference Optimization: Your Language Model is Secretly a Reward Model</a>
+        <p>Implemented SFT + DPO preference-based alignment on LLMs using the Anthropic HH-RLHF dataset. Optimized distributed GPU training on A100 with AdamW, cosine LR scheduling, gradient accumulation, and checkpoint recovery.</p>
+        <div class="pc-metrics">
+          <span class="pc-metric">&#9650; 25.8% alignment accuracy</span>
+          <span class="pc-metric">&#9650; 22% faster training</span>
+        </div>
+        <div class="pc-tags"><span class="pc-tag">DPO</span><span class="pc-tag">RLHF</span><span class="pc-tag">LoRA</span><span class="pc-tag">FSDP</span><span class="pc-tag">A100</span><span class="pc-tag">HuggingFace</span></div>
+        <a class="pc-paper" href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener">&#128196; Rafailov et al. (2023) &mdash; Direct Preference Optimization</a>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#127912;</div>
         <h3>Diffusion Model Fine-Tuning with RL (DDPO + LoRA)</h3>
         <div class="pc-date">May &ndash; Jun 2025</div>
-        <p>Fine-tuned Stable Diffusion v1.5 using Denoising Diffusion Policy Optimization (DDPO) + LoRA across 100 epochs on an A100 GPU, optimizing for reward-driven objectives (aesthetic quality, compressibility). Built a production-ready CLI and batch generator.</p>
-        <div class="pc-metrics"><span class="pc-metric">1,000+ structured outputs</span><span class="pc-metric">&#9889; &le;4 s latency</span></div>
-        <div class="pc-tags"><span class="pc-tag">Stable Diffusion</span><span class="pc-tag">DDPO</span><span class="pc-tag">LoRA</span><span class="pc-tag">Diffusers</span><span class="pc-tag">A100 GPU</span><span class="pc-tag">RL</span></div>
-        <a class="pc-paper" href="https://arxiv.org/abs/2305.13301" target="_blank" rel="noopener">&#128196; Black et al. (2023) &mdash; Training Diffusion Models with Reinforcement Learning (DDPO)</a>
+        <p>Fine-tuned Stable Diffusion v1.5 using Denoising Diffusion Policy Optimization (DDPO) + LoRA across 100 epochs on A100, optimizing for reward-driven objectives (aesthetic quality, compressibility). Built a production-ready CLI and batch generator.</p>
+        <div class="pc-metrics">
+          <span class="pc-metric">1,000+ structured outputs</span>
+          <span class="pc-metric">&#9889; &le;4 s latency</span>
+        </div>
+        <div class="pc-tags"><span class="pc-tag">Stable Diffusion</span><span class="pc-tag">DDPO</span><span class="pc-tag">LoRA</span><span class="pc-tag">Diffusers</span><span class="pc-tag">A100</span><span class="pc-tag">RL</span></div>
+        <a class="pc-paper" href="https://arxiv.org/abs/2305.13301" target="_blank" rel="noopener">&#128196; Black et al. (2023) &mdash; Training Diffusion Models with RL (DDPO)</a>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#128506;</div>
-        <h3>Motion Planning for Obstacle-Aware Autonomous Navigation</h3>
+        <h3>Motion Planning for Autonomous Navigation</h3>
         <div class="pc-date">MAE 547: Robot Motion Planning &middot; ASU &middot; Aug &ndash; Dec 2024</div>
-        <p>Implemented and compared three motion planning paradigms in MATLAB across 2D navigation and robotic manipulation settings:</p>
-        <ul style="margin:8px 0 10px 18px;font-size:0.92rem;color:var(--text);line-height:1.7;">
-          <li><strong>A* Path Planning</strong> on a 20&times;20 grid with static, fixed, and dynamic obstacles. Robot recomputes the shortest path in real time when a moving obstacle occludes the route; an &ldquo;Optimized&rdquo; mode scales speed proportionally to remaining distance using Euclidean heuristic, achieving smooth deceleration near the goal.</li>
-          <li><strong>RRT (Rapidly-exploring Random Tree)</strong> for a <strong>Franka Emika Panda</strong> robot in a pick-and-place scenario using MATLAB&rsquo;s <code>manipulatorRRT</code>. Benchmarked three parameter configurations (MaxConnectionDistance 0.3&ndash;5, ValidationDistance 0.01&ndash;0.1, ConnectHeuristic on/off) and applied path shortening to reduce trajectory length.</li>
-          <li><strong>6-DOF Manipulator Simulation</strong> (Robotics Toolbox): defined DH parameters for a custom SerialLink arm, computed inverse kinematics via <code>ikine</code>, and generated smooth pick-and-place joint trajectories using quintic polynomial interpolation (<code>jtraj</code>, 50 steps).</li>
-        </ul>
+        <p>Implemented and compared three planners in MATLAB: <strong>A*</strong> on a 20&times;20 grid with static and dynamic obstacle re-planning; <strong>RRT</strong> for Franka Emika Panda pick-and-place using <code>manipulatorRRT</code> with benchmarked parameters and path shortening; and a <strong>6-DOF SerialLink arm</strong> with DH parameters, inverse kinematics, and quintic polynomial joint trajectories.</p>
         <div class="pc-metrics">
           <span class="pc-metric">&#10003; 3 Planners Implemented</span>
-          <span class="pc-metric">&#10003; Dynamic Obstacle Re-planning</span>
-          <span class="pc-metric">Franka Panda + 6-DOF Arm</span>
+          <span class="pc-metric">&#10003; Dynamic Re-planning</span>
         </div>
-        <div class="pc-tags"><span class="pc-tag">A* Algorithm</span><span class="pc-tag">RRT</span><span class="pc-tag">MATLAB</span><span class="pc-tag">manipulatorRRT</span><span class="pc-tag">Inverse Kinematics</span><span class="pc-tag">Trajectory Planning</span><span class="pc-tag">Franka Panda</span><span class="pc-tag">Robotics Toolbox</span><span class="pc-tag">Dynamic Obstacles</span></div>
+        <div class="pc-tags"><span class="pc-tag">A*</span><span class="pc-tag">RRT</span><span class="pc-tag">MATLAB</span><span class="pc-tag">Inverse Kinematics</span><span class="pc-tag">Franka Panda</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#128225;</div>
         <h3>RLHF-Based LiDAR Data Processing &amp; Policy Alignment</h3>
         <div class="pc-date">Jan &ndash; May 2025</div>
-        <p>Developed a Reinforcement Learning from Human Feedback (RLHF) pipeline for LiDAR point cloud data. Applied policy alignment via DPO to train perception models that match annotator preferences on autonomous driving scenarios.</p>
+        <p>Developed an RLHF pipeline for LiDAR point cloud data. Applied policy alignment via DPO to train perception models that match annotator preferences on autonomous driving scenarios.</p>
         <div class="pc-metrics"><span class="pc-metric">&#10003; Policy Aligned via DPO</span></div>
-        <div class="pc-tags"><span class="pc-tag">RLHF</span><span class="pc-tag">LiDAR</span><span class="pc-tag">Point Clouds</span><span class="pc-tag">DPO</span><span class="pc-tag">PyTorch</span><span class="pc-tag">OpenCV</span></div>
+        <div class="pc-tags"><span class="pc-tag">RLHF</span><span class="pc-tag">LiDAR</span><span class="pc-tag">Point Clouds</span><span class="pc-tag">DPO</span><span class="pc-tag">PyTorch</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#128424;</div>
         <h3>Volumetric 3D Printing Control System (CAL)</h3>
         <div class="pc-date">Dec 2024 &ndash; Jun 2025 &middot; Yang Lab</div>
-        <p>Designed the computational backend for a DMD-based volumetric 3D printer using Computed Axial Lithography (CAL) &mdash; the same tomographic reconstruction principle used in CT scanners. Built voxelization algorithms and sinogram generation pipelines for layer-free optical fabrication.</p>
+        <p>Built the computational backend for a DMD-based volumetric 3D printer using Computed Axial Lithography &mdash; the same tomographic reconstruction principle used in CT scanners. Developed voxelization algorithms and sinogram generation pipelines for layer-free optical fabrication.</p>
         <div class="pc-metrics"><span class="pc-metric">&#10003; Lab Deployed</span></div>
-        <div class="pc-tags"><span class="pc-tag">CAL / Tomography</span><span class="pc-tag">Python</span><span class="pc-tag">NumPy</span><span class="pc-tag">MATLAB</span><span class="pc-tag">Voxelization</span><span class="pc-tag">DMD Control</span></div>
+        <div class="pc-tags"><span class="pc-tag">CAL / Tomography</span><span class="pc-tag">Python</span><span class="pc-tag">NumPy</span><span class="pc-tag">MATLAB</span><span class="pc-tag">DMD Control</span></div>
       </div>
 
       <div class="project-card">
@@ -411,51 +409,40 @@
         <h3>Multi-Robot SLAM &amp; Sensor Fusion</h3>
         <div class="pc-date">Coursework &middot; ASU</div>
         <p>Implemented SLAM pipelines for multi-robot coordination integrating LiDAR, camera, and IMU data. Evaluated occupancy map quality across multiple robots operating simultaneously in ROS2 / Gazebo simulation.</p>
-        <div class="pc-tags"><span class="pc-tag">SLAM</span><span class="pc-tag">ROS2</span><span class="pc-tag">Sensor Fusion</span><span class="pc-tag">LiDAR</span><span class="pc-tag">IMU</span><span class="pc-tag">Gazebo</span></div>
+        <div class="pc-tags"><span class="pc-tag">SLAM</span><span class="pc-tag">ROS2</span><span class="pc-tag">Sensor Fusion</span><span class="pc-tag">LiDAR</span><span class="pc-tag">Gazebo</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#128295;</div>
         <h3>Prototyping &amp; Testing of Advanced Mechanical Systems</h3>
         <div class="pc-date">Aparna Craft Exteriors &middot; 2022&ndash;2024</div>
-        <p>Led mechanical design validation using AutoCAD and GD&amp;T aligned to ASME Y14.100 / Y14.5 standards. Managed quality testing of FDM 3D-printed parts (dimensional accuracy, tensile strength, structural analysis via SolidWorks / ANSYS). Directed procurement planning and cost-benefit analysis.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#9650; 20% durability improvement</span><span class="pc-metric">&#9660; 15% procurement lead time</span></div>
-        <div class="pc-tags"><span class="pc-tag">SolidWorks</span><span class="pc-tag">ANSYS FEA</span><span class="pc-tag">AutoCAD</span><span class="pc-tag">GD&amp;T</span><span class="pc-tag">ASME Standards</span><span class="pc-tag">FDM 3D Printing</span></div>
+        <p>Led mechanical design validation using AutoCAD and GD&amp;T aligned to ASME Y14.5 standards. Managed quality testing of FDM 3D-printed parts and directed procurement and cost-benefit analysis across 30+ projects.</p>
+        <div class="pc-metrics">
+          <span class="pc-metric">&#9650; 20% durability</span>
+          <span class="pc-metric">&#9660; 15% procurement time</span>
+        </div>
+        <div class="pc-tags"><span class="pc-tag">SolidWorks</span><span class="pc-tag">ANSYS FEA</span><span class="pc-tag">AutoCAD</span><span class="pc-tag">GD&amp;T</span><span class="pc-tag">FDM 3D Printing</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#128225;</div>
         <h3>Cooperative UGV Coverage for Disaster-Zone Cell Network Deployment</h3>
         <div class="pc-date">MAE 598: Multi-Robot Systems &middot; ASU &middot; 2024&ndash;2025</div>
-        <p>Designed and analyzed a distributed multi-robot coverage controller for deploying UGVs to restore cellular connectivity in disaster zones. Modeled the environment as a bounded planar domain and used a <strong>Voronoi-based locational cost</strong> framework where each UGV drives toward the population-weighted centroid of its Voronoi cell. Proved convergence to centroidal Voronoi tessellations using <strong>Lyapunov&rsquo;s direct method</strong> and <strong>LaSalle&rsquo;s invariance principle</strong>. Implemented full simulation in Python with obstacle avoidance, communication-chain tether constraints, and redundancy weighting &mdash; verified that locational cost decreases monotonically and robots converge to stable coverage configurations.</p>
+        <p>Distributed coverage controller for 8 UGVs restoring cellular connectivity after disasters. Each robot converges to the population-weighted centroid of its Voronoi cell; convergence is proved via Lyapunov&rsquo;s direct method and LaSalle&rsquo;s invariance principle. Validated in Python with obstacle avoidance and communication-chain tether constraints.</p>
         <div class="pc-metrics">
           <span class="pc-metric">&#10003; Lyapunov Stability Proven</span>
-          <span class="pc-metric">&#10003; Simulation Validated</span>
           <span class="pc-metric">8 UGVs</span>
         </div>
-        <div class="pc-tags">
-          <span class="pc-tag">Multi-Robot Systems</span><span class="pc-tag">Voronoi Coverage</span>
-          <span class="pc-tag">Lyapunov Analysis</span><span class="pc-tag">Distributed Control</span>
-          <span class="pc-tag">LaSalle&rsquo;s Principle</span><span class="pc-tag">Python</span>
-          <span class="pc-tag">Obstacle Avoidance</span><span class="pc-tag">UGVs</span>
-        </div>
+        <div class="pc-tags"><span class="pc-tag">Multi-Robot Systems</span><span class="pc-tag">Voronoi Coverage</span><span class="pc-tag">Lyapunov Analysis</span><span class="pc-tag">Distributed Control</span><span class="pc-tag">Python</span></div>
       </div>
 
       <div class="project-card">
         <div class="pc-icon">&#129520;</div>
         <h3>Flexible MEMS Sensors &amp; Actuators for Robotic Applications</h3>
         <div class="pc-date">MAE 519: Mechanics of Micro/Nano Systems &middot; ASU &middot; 2024&ndash;2025</div>
-        <p>Authored a comprehensive research survey on flexible MEMS technology for next-generation robotics. Covered design principles, microfabrication techniques (photolithography, DRIE, CVD, wafer bonding), and sensing mechanisms (piezoresistive, capacitive, piezoelectric). Analyzed flexible sensor designs (serpentine, kirigami, island-bridge structures), actuator types (DEAs, SMA, pneumatic), and key materials (PVDF, elastomeric composites, carbon nanomaterials / graphene). Explored applications in soft robotics, wearables, healthcare, and industrial automation, with a forward-looking roadmap for intelligent, human-compatible robotic systems.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">&#10003; Research Survey</span>
-          <span class="pc-metric">MEMS &amp; Soft Robotics</span>
-        </div>
-        <div class="pc-tags">
-          <span class="pc-tag">MEMS</span><span class="pc-tag">Flexible Sensors</span>
-          <span class="pc-tag">Soft Robotics</span><span class="pc-tag">Piezoelectric</span>
-          <span class="pc-tag">Microfabrication</span><span class="pc-tag">PVDF</span>
-          <span class="pc-tag">Nanomaterials</span><span class="pc-tag">Bio-inspired Robotics</span>
-        </div>
+        <p>Research survey on flexible MEMS for next-generation robotics: microfabrication techniques (photolithography, DRIE, CVD), sensing mechanisms (piezoresistive, capacitive, piezoelectric), and actuator types (DEAs, SMA, pneumatic). Materials include PVDF and graphene composites; applications span soft robotics, wearables, and healthcare.</p>
+        <div class="pc-metrics"><span class="pc-metric">&#10003; Research Survey</span></div>
+        <div class="pc-tags"><span class="pc-tag">MEMS</span><span class="pc-tag">Flexible Sensors</span><span class="pc-tag">Soft Robotics</span><span class="pc-tag">Microfabrication</span><span class="pc-tag">PVDF</span></div>
       </div>
 
     </div>
@@ -466,97 +453,46 @@
   <div class="container">
     <div class="section-label"><h2>Skills</h2><div class="section-label-line"></div></div>
     <div class="skills-grid">
-
       <div class="skill-group">
         <h3>Robotics &amp; Simulation</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">ROS / ROS2</span><span class="skill-tag">MoveIt</span><span class="skill-tag">MuJoCo</span>
-          <span class="skill-tag">PyBullet</span><span class="skill-tag">Isaac Gym</span><span class="skill-tag">Isaac Sim</span>
-          <span class="skill-tag">Gazebo</span><span class="skill-tag">OpenGL</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">ROS / ROS2</span><span class="skill-tag">MoveIt</span><span class="skill-tag">MuJoCo</span><span class="skill-tag">PyBullet</span><span class="skill-tag">Isaac Gym</span><span class="skill-tag">Isaac Sim</span><span class="skill-tag">Gazebo</span></div>
       </div>
-
       <div class="skill-group">
         <h3>Programming</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">C</span>
-          <span class="skill-tag">Java</span><span class="skill-tag">MATLAB</span><span class="skill-tag">SQL</span><span class="skill-tag">Bash</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">C</span><span class="skill-tag">Java</span><span class="skill-tag">MATLAB</span><span class="skill-tag">SQL</span><span class="skill-tag">Bash</span></div>
       </div>
-
       <div class="skill-group">
         <h3>AI / ML Frameworks</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">JAX / Flax</span>
-          <span class="skill-tag">Keras</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">TensorRT</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">JAX / Flax</span><span class="skill-tag">Keras</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">TensorRT</span></div>
       </div>
-
       <div class="skill-group">
         <h3>AI / ML Techniques</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">RLHF / PPO / SAC</span><span class="skill-tag">GRPO</span><span class="skill-tag">DPO</span>
-          <span class="skill-tag">LoRA / FSDP</span><span class="skill-tag">Behavior Cloning</span><span class="skill-tag">Diffusion Models</span>
-          <span class="skill-tag">Self-Supervised Learning</span><span class="skill-tag">Model Quantization</span>
-          <span class="skill-tag">Agentic AI</span><span class="skill-tag">MCP</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">RLHF / PPO / SAC</span><span class="skill-tag">GRPO</span><span class="skill-tag">DPO</span><span class="skill-tag">LoRA / FSDP</span><span class="skill-tag">Behavior Cloning</span><span class="skill-tag">Diffusion Models</span><span class="skill-tag">Self-Supervised Learning</span><span class="skill-tag">Agentic AI</span></div>
       </div>
-
       <div class="skill-group">
         <h3>NLP &amp; Retrieval</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">RAG</span><span class="skill-tag">Vector Embeddings</span><span class="skill-tag">FAISS</span>
-          <span class="skill-tag">BERT</span><span class="skill-tag">LSTM</span><span class="skill-tag">spaCy</span>
-          <span class="skill-tag">LangChain</span><span class="skill-tag">Qdrant</span><span class="skill-tag">Pinecone</span><span class="skill-tag">Neo4j</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">RAG</span><span class="skill-tag">Vector Embeddings</span><span class="skill-tag">FAISS</span><span class="skill-tag">BERT</span><span class="skill-tag">LangChain</span><span class="skill-tag">Qdrant</span><span class="skill-tag">Pinecone</span></div>
       </div>
-
       <div class="skill-group">
         <h3>Robot Perception</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">SLAM</span><span class="skill-tag">Sensor Fusion</span><span class="skill-tag">LiDAR</span>
-          <span class="skill-tag">Cameras</span><span class="skill-tag">Radar</span><span class="skill-tag">OpenCV</span>
-          <span class="skill-tag">Optical Flow</span><span class="skill-tag">Point Clouds</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">SLAM</span><span class="skill-tag">Sensor Fusion</span><span class="skill-tag">LiDAR</span><span class="skill-tag">Cameras</span><span class="skill-tag">Radar</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Point Clouds</span></div>
       </div>
-
       <div class="skill-group">
         <h3>Infrastructure &amp; Tools</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">CUDA</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span>
-          <span class="skill-tag">Linux</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">GCP / AWS</span>
-          <span class="skill-tag">CI/CD</span><span class="skill-tag">W&amp;B</span><span class="skill-tag">Airflow</span>
-          <span class="skill-tag">Terraform</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">DynamoDB</span>
-          <span class="skill-tag">Elasticsearch</span><span class="skill-tag">Redis</span><span class="skill-tag">GraphQL</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">CUDA</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">Linux</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">GCP / AWS</span><span class="skill-tag">CI/CD</span><span class="skill-tag">W&amp;B</span></div>
       </div>
-
       <div class="skill-group">
         <h3>CAD &amp; Design Software</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">SolidWorks</span><span class="skill-tag">CATIA</span><span class="skill-tag">Creo</span>
-          <span class="skill-tag">AutoCAD</span><span class="skill-tag">Siemens NX</span><span class="skill-tag">ANSYS (FEA/FEM)</span>
-          <span class="skill-tag">Orgadata</span><span class="skill-tag">GD&amp;T</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">SolidWorks</span><span class="skill-tag">CATIA</span><span class="skill-tag">Creo</span><span class="skill-tag">AutoCAD</span><span class="skill-tag">Siemens NX</span><span class="skill-tag">ANSYS FEA</span><span class="skill-tag">GD&amp;T</span></div>
       </div>
-
       <div class="skill-group">
         <h3>Quality &amp; Manufacturing</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Lean / Six Sigma</span><span class="skill-tag">FMEA / DFMEA</span>
-          <span class="skill-tag">APQP / SPC</span><span class="skill-tag">Kaizen / 5S</span>
-          <span class="skill-tag">NDT</span><span class="skill-tag">CNC Machining</span><span class="skill-tag">FDM 3D Printing</span><span class="skill-tag">SAP ERP</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">Lean / Six Sigma</span><span class="skill-tag">FMEA / DFMEA</span><span class="skill-tag">APQP / SPC</span><span class="skill-tag">Kaizen / 5S</span><span class="skill-tag">NDT</span><span class="skill-tag">CNC Machining</span><span class="skill-tag">FDM 3D Printing</span><span class="skill-tag">SAP ERP</span></div>
       </div>
-
       <div class="skill-group">
         <h3>Hardware &amp; Control</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">MPC</span><span class="skill-tag">PLCs</span><span class="skill-tag">CAN Bus</span>
-          <span class="skill-tag">Arduino</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">IoT</span><span class="skill-tag">Simulink</span>
-        </div>
+        <div class="skill-tags"><span class="skill-tag">MPC</span><span class="skill-tag">PLCs</span><span class="skill-tag">CAN Bus</span><span class="skill-tag">Arduino</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">IoT</span><span class="skill-tag">Simulink</span></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -564,7 +500,7 @@
 <section id="contact" class="contact-section">
   <div class="container">
     <div class="section-label"><h2>Get In Touch</h2><div class="section-label-line"></div></div>
-    <p style="color:rgba(255,255,255,0.6);margin-bottom:28px;font-size:0.95rem;">I am actively looking for full-time roles in Robotics, AI/ML, and Autonomous Systems (graduating May 2026). Reach out &mdash; let&apos;s talk!</p>
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:28px;font-size:0.95rem;">Actively looking for full-time roles in Robotics, AI/ML, and Autonomous Systems. Graduating May 2026. Let&apos;s talk.</p>
     <div class="contact-grid">
       <a href="tel:+14802460043" class="contact-card">
         <span class="cc-icon">&#128222;</span>
