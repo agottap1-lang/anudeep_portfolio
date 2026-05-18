@@ -94,6 +94,8 @@
     .pc-metric { display:inline-flex; align-items:center; gap:5px; font-size:0.8rem; font-weight:600; color:var(--accent); background:rgba(59,130,246,0.08); padding:3px 10px; border-radius:999px; margin:2px 3px 2px 0; }
     .pc-tags { display:flex; flex-wrap:wrap; gap:6px; }
     .pc-tag { font-size:0.73rem; font-weight:500; background:var(--light); color:var(--muted); padding:3px 9px; border-radius:999px; border:1px solid var(--border); }
+    .pc-paper { display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:0.8rem; font-weight:600; color:var(--accent); text-decoration:none; border:1.5px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.06); padding:5px 12px; border-radius:8px; transition:background 0.15s,border-color 0.15s; }
+    .pc-paper:hover { background:rgba(59,130,246,0.13); border-color:rgba(59,130,246,0.6); }
     .skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
     .skill-group { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:18px 20px; }
     .skill-group h3 { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:11px; }
@@ -336,6 +338,7 @@
         <p>Implemented SFT + DPO preference-based policy alignment on LLMs using the Anthropic HH-RLHF dataset. Optimized distributed GPU training on A100 with AdamW, cosine LR scheduling, gradient accumulation, and checkpoint recovery. Prepared for LoRA, FSDP, and model parallelism scaling.</p>
         <div class="pc-metrics"><span class="pc-metric">&#9650; 25.8% alignment accuracy</span><span class="pc-metric">&#9650; 22% faster training</span></div>
         <div class="pc-tags"><span class="pc-tag">DPO</span><span class="pc-tag">RLHF</span><span class="pc-tag">LoRA</span><span class="pc-tag">FSDP</span><span class="pc-tag">A100 GPU</span><span class="pc-tag">HuggingFace</span></div>
+        <a class="pc-paper" href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener">&#128196; Rafailov et al. (2023) &mdash; Direct Preference Optimization: Your Language Model is Secretly a Reward Model</a>
       </div>
 
       <div class="project-card">
@@ -345,6 +348,7 @@
         <p>Fine-tuned Stable Diffusion v1.5 using Denoising Diffusion Policy Optimization (DDPO) + LoRA across 100 epochs on an A100 GPU, optimizing for reward-driven objectives (aesthetic quality, compressibility). Built a production-ready CLI and batch generator.</p>
         <div class="pc-metrics"><span class="pc-metric">1,000+ structured outputs</span><span class="pc-metric">&#9889; &le;4 s latency</span></div>
         <div class="pc-tags"><span class="pc-tag">Stable Diffusion</span><span class="pc-tag">DDPO</span><span class="pc-tag">LoRA</span><span class="pc-tag">Diffusers</span><span class="pc-tag">A100 GPU</span><span class="pc-tag">RL</span></div>
+        <a class="pc-paper" href="https://arxiv.org/abs/2305.13301" target="_blank" rel="noopener">&#128196; Black et al. (2023) &mdash; Training Diffusion Models with Reinforcement Learning (DDPO)</a>
       </div>
 
       <div class="project-card">
