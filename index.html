@@ -210,21 +210,31 @@
         <span>&#129302; LOGOS Robotics Lab, ASU</span>
         <span>&#128101; Committee: Hani ben Amor &middot; Kunal Garg</span>
       </div>
-      <p class="tc-body"><strong style="color:#93c5fd">The core question:</strong> Can AI models like GPT or Gemini watch a robot move and judge whether its intent is clear &mdash; the same way a human observer would? If so, we can automate legibility evaluation and use it to improve robot behavior at scale, without needing human annotations.</p>
-      <p class="tc-body"><strong style="color:#93c5fd">What was built:</strong> A VLM evaluation pipeline that feeds cumulative video frames of robot manipulation to vision-language models at selected timepoints. The model infers the robot&rsquo;s intended goal from partial motion evidence. A prefix-frame prompting strategy was designed so the model sees more of the motion at each step &mdash; measuring how early it can correctly identify the goal. Results were compared against human reference labels across 8 manipulation scenarios.</p>
-      <p class="tc-body"><strong style="color:#93c5fd">Extended to robot learning:</strong> A diffusion policy generates multiple candidate trajectories using different noise seeds. Each candidate is rendered into image frames and scored by a VLM across four behavior dimensions &mdash; <em>legibility, predictability, safety,</em> and <em>grounding</em> &mdash; using behavior-specific prompts. The highest-scoring trajectory is re-executed. This Best-of-K VLM selection improves legibility over unguided policies. Three leading models were benchmarked: <strong style="color:#93c5fd">Gemini 3 Pro, GPT-5.4, and Claude Opus 4.5</strong>.</p>
-      <p class="tc-body"><strong style="color:#93c5fd">Key finding:</strong> Multimodal VLMs capture meaningful goal-inference signals from partial robot motion and can serve as practical proxies for human legibility judgment &mdash; though performance varies on trajectories that are deliberately ambiguous or deceptive.</p>
+
+      <p class="tc-body"><strong style="color:#93c5fd">The problem:</strong> A robot&rsquo;s motion should communicate its intent clearly to anyone watching &mdash; this property is called <em>legibility</em>. Evaluating it today requires human observers, which is slow and hard to scale. This thesis asks: can frontier AI models (Gemini, GPT, Claude) serve as automated proxies for that human judgment?</p>
+
+      <p class="tc-body"><strong style="color:#93c5fd">Contribution 1 &mdash; VLM goal-inference evaluation pipeline:</strong> Robot manipulation videos are sampled into cumulative frame prefixes at selected timepoints and fed to a VLM with a structured prompt. The model returns JSON with goal probabilities (pA / pB), a key visual cue, and a legibility flag. Accuracy is measured against ground-truth labels across <strong style="color:#93c5fd">8 manipulation scenarios</strong> (left-block, right-block, top drawer, bottom drawer &mdash; legible and ambiguous variants).<br>
+      Results &mdash; mean goal-inference accuracy: <strong style="color:#93c5fd">Gemini 3 Pro 67.7% &nbsp;|&nbsp; Claude Opus 4.5 64.5% &nbsp;|&nbsp; GPT-5.4 61.3%</strong>. All three models performed better on legible trajectories than on ambiguous ones, confirming VLMs respond to genuine motion cues.</p>
+
+      <p class="tc-body"><strong style="color:#93c5fd">Contribution 2 &mdash; VLM Best-of-K trajectory ranking for diffusion policies:</strong> A behavior-conditioned diffusion policy (DDPM + classifier-free guidance, &lambda;=2.0) is trained across four behaviors &mdash; <em>legibility, predictability, safety, grounding</em>. At inference, K candidate trajectories are generated with different noise seeds, rendered to frames, and scored by a VLM; the highest-scoring candidate is re-executed. Legibility is quantified as a lateral commitment score L over the first 30% of the trajectory.<br>
+      Results: unguided baseline L=0.919 &rarr; CFG-only L=0.951 &rarr; CFG&thinsp;+&thinsp;VLM reranking <strong style="color:#93c5fd">L=0.955</strong>. Best-of-K scaling (unguided): K=1&thinsp;&rarr;&thinsp;0.732, K=4&thinsp;&rarr;&thinsp;0.779, K=8&thinsp;&rarr;&thinsp;0.797, K=16&thinsp;&rarr;&thinsp;0.806 &mdash; improving monotonically but never reaching a single CFG-guided trajectory (0.834). CFG and VLM reranking are <strong style="color:#93c5fd">complementary</strong>: guidance shapes the candidate pool; VLM selects the best within it.</p>
+
+      <p class="tc-body"><strong style="color:#93c5fd">Contribution 3 &mdash; Cross-model scoring benchmark:</strong> All three VLMs scored the same K=8 candidates across all four behavior dimensions. Predictability received the highest scores (0.67&ndash;0.92); safety the lowest (0.17&ndash;0.37). The relative ranking of behaviors was consistent across model families even though absolute calibration differed &mdash; supporting VLM scoring as a stable qualitative signal.</p>
+
+      <p class="tc-body"><strong style="color:#93c5fd">Environment:</strong> PyBullet physics simulation, simulated Franka Panda arm, Python. Gemini 3 Pro / GPT-5.4 / Claude Opus 4.5 APIs queried via structured prompts with JSON schema enforcement.</p>
+
       <div class="tc-tags">
         <span class="tc-tag">Vision-Language Models</span>
         <span class="tc-tag">Robot Motion Legibility</span>
         <span class="tc-tag">Goal Inference</span>
-        <span class="tc-tag">Diffusion Policy</span>
-        <span class="tc-tag">Trajectory Ranking</span>
-        <span class="tc-tag">Human-Robot Interaction</span>
+        <span class="tc-tag">Diffusion Policy (DDPM)</span>
+        <span class="tc-tag">Classifier-Free Guidance</span>
+        <span class="tc-tag">Best-of-K Reranking</span>
         <span class="tc-tag">Prefix-Frame Prompting</span>
-        <span class="tc-tag">Gemini / GPT / Claude</span>
-        <span class="tc-tag">PyTorch / CUDA</span>
-        <span class="tc-tag">Robot Manipulation</span>
+        <span class="tc-tag">Gemini 3 Pro / GPT-5.4 / Claude</span>
+        <span class="tc-tag">PyBullet / Franka Panda</span>
+        <span class="tc-tag">Human-Robot Interaction</span>
+        <span class="tc-tag">Python / PyTorch</span>
       </div>
     </div>
   </div>
@@ -243,13 +253,12 @@
           </div>
           <div class="exp-org">Logos Robotics Lab &middot; Arizona State University, Tempe</div>
           <ul>
-            <li>Built <strong>end-to-end multimodal ML pipelines</strong> on VLM/LLM stacks &mdash; dataset curation, config-driven training, automated evaluation, reproducible experiment tracking with W&amp;B</li>
-            <li>Implemented <strong>Vision-Language Action (VLA) models</strong> in Python/PyTorch; tested RL policies on the <strong>LIBERO benchmark</strong> to generate collision-free robot motion for manipulators</li>
-            <li>Trained manipulation policies end-to-end from raw pixel observations via camera pipelines and vision encoders, linking multimodal perception to low-latency control</li>
-            <li>Piloted <strong>sim-to-real deployment</strong> of VLA-conditioned policies on a <strong>Franka Emika Panda arm</strong> &mdash; safety interlocks, latency budgets, and on-hardware bring-up</li>
-            <li>Optimized diffusion and autoregressive model pipelines with <strong>mixed-precision training, efficient batching, and CUDA GPU memory management</strong>, reducing inference latency</li>
-            <li>Worked within large open-source codebases (VLA/LLM/VLM stacks); added unit tests, debugged training loops, refactored modules for reliability and readability</li>
-            <li>Contributing experiments and ablations for lab manuscripts targeting <strong>ICRA / CoRL</strong> on VLA-driven safe manipulation</li>
+            <li>Built a <strong>VLM-based robot motion legibility evaluation pipeline</strong> using cumulative prefix-frame prompting &mdash; queries Gemini 3 Pro, GPT-5.4, and Claude Opus 4.5 with structured JSON prompts to infer robot goals from partial trajectory observations; achieved <strong>67.7% mean goal-inference accuracy</strong> (Gemini 3 Pro, highest across three frontier models)</li>
+            <li>Trained a <strong>behavior-conditioned diffusion policy (DDPM)</strong> with classifier-free guidance (&lambda;=2.0) across four behavior categories &mdash; legibility, predictability, safety, grounding &mdash; in PyBullet simulation on a Franka Panda arm; defined formal evaluation metrics: lateral commitment score L, path efficiency E, obstacle clearance C, waypoint proximity G</li>
+            <li>Designed and implemented a <strong>5-stage Best-of-K VLM trajectory ranking pipeline</strong>: generate K candidates via different noise seeds &rarr; render to image sequences &rarr; VLM scores with behavior-specific prompts &rarr; re-execute top-ranked trajectory; demonstrated CFG and VLM reranking are complementary (CFG+VLM: L=0.955 vs unguided baseline L=0.919)</li>
+            <li>Ran <strong>cross-model ablations</strong> comparing three frontier VLMs (Gemini 3 Pro, GPT-5.4, Claude Opus 4.5) on 8 robot manipulation videos across legible and ambiguous motion variants; showed VLMs consistently score predictability highest (0.67&ndash;0.92) and safety lowest (0.17&ndash;0.37)</li>
+            <li>Designed prompt templates with <strong>structured JSON schema enforcement</strong> (pA, pB probabilities, visual cue field, legibility flag) for consistent automated parsing across thousands of VLM API calls</li>
+            <li>Thesis approved <strong>April 2026</strong>; committee: Prof. Nakul Gopalan (Chair), Hani ben Amor, Kunal Garg</li>
           </ul>
         </div>
       </div>
@@ -316,21 +325,29 @@
     <div class="projects-grid">
 
       <div class="project-card">
-        <div class="pc-icon">&#129470;</div>
-        <h3>VLA-Based Safe Robot Manipulation</h3>
-        <div class="pc-date">Jun 2025 &ndash; Present &middot; Thesis Project</div>
-        <p>End-to-end training of Vision-Language Action models to produce safe, collision-free trajectories tested on the LIBERO benchmark. Full pipeline: dataset collection in MuJoCo/ROS2 &rarr; model training &rarr; sim-to-real deployment on Franka Emika Panda with safety interlocks.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#10003; Sim-to-Real Deployed</span><span class="pc-metric">&#10003; LIBERO Benchmark</span></div>
-        <div class="pc-tags"><span class="pc-tag">VLA Models</span><span class="pc-tag">PyTorch</span><span class="pc-tag">CUDA</span><span class="pc-tag">ROS2</span><span class="pc-tag">MuJoCo</span><span class="pc-tag">Franka Arm</span></div>
+        <div class="pc-icon">&#129302;</div>
+        <h3>VLM-Based Robot Motion Legibility Evaluation</h3>
+        <div class="pc-date">MS Thesis &middot; LOGOS Robotics Lab, ASU &middot; 2024&ndash;2026</div>
+        <p>Built an end-to-end VLM evaluation pipeline to test whether frontier AI models can judge how clearly a robot communicates its intent through motion &mdash; replacing the need for human observers. Robot manipulation videos are broken into <strong>cumulative frame prefixes</strong> at selected timepoints and sent to a VLM with a structured prompt requesting goal probabilities (pA/pB), a visual cue, and a legibility flag (JSON output). Accuracy is measured against ground-truth labels across <strong>8 task scenarios</strong> (left/right-block pick, top/bottom drawer &mdash; legible and ambiguous variants).</p>
+        <div class="pc-metrics">
+          <span class="pc-metric">Gemini 3 Pro: 67.7%</span>
+          <span class="pc-metric">Claude Opus 4.5: 64.5%</span>
+          <span class="pc-metric">GPT-5.4: 61.3%</span>
+        </div>
+        <div class="pc-tags"><span class="pc-tag">Vision-Language Models</span><span class="pc-tag">Robot Legibility</span><span class="pc-tag">Goal Inference</span><span class="pc-tag">Prefix-Frame Prompting</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Gemini API</span><span class="pc-tag">GPT API</span><span class="pc-tag">Python</span></div>
       </div>
 
       <div class="project-card">
-        <div class="pc-icon">&#128065;</div>
-        <h3>Human-in-the-Loop VLM Evaluation Pipeline</h3>
-        <div class="pc-date">Jan 2026 &ndash; Feb 2026</div>
-        <p>Built an end-to-end evaluation methodology to test whether Vision-Language Models can substitute human evaluators for robot motion understanding. Defined structured output formats, experiment logging, versioned datasets, and scoring protocols across evaluation modes and model variants.</p>
-        <div class="pc-metrics"><span class="pc-metric">73.1% model-human agreement</span><span class="pc-metric">5.1% accuracy gap</span></div>
-        <div class="pc-tags"><span class="pc-tag">VLM Evaluation</span><span class="pc-tag">Human Preference</span><span class="pc-tag">PyTorch</span><span class="pc-tag">W&amp;B</span><span class="pc-tag">HuggingFace</span></div>
+        <div class="pc-icon">&#127919;</div>
+        <h3>VLM Best-of-K Trajectory Ranking for Diffusion Policies</h3>
+        <div class="pc-date">MS Thesis &middot; LOGOS Robotics Lab, ASU &middot; 2025&ndash;2026</div>
+        <p>Designed and implemented a 5-stage trajectory selection pipeline: a behavior-conditioned <strong>diffusion policy (DDPM)</strong> with <strong>classifier-free guidance (&lambda;=2.0)</strong> generates K candidate trajectories using different noise seeds &rarr; each is rendered to an image sequence &rarr; a VLM scores each with a behavior-specific prompt &rarr; the highest-scoring candidate is re-executed. Trained across 4 behavior categories: <em>legibility, predictability, safety, grounding</em>. Legibility is measured as lateral commitment L over the first 30% of the trajectory.</p>
+        <div class="pc-metrics">
+          <span class="pc-metric">CFG+VLM: L=0.955 vs baseline 0.919</span>
+          <span class="pc-metric">Best-of-16: L=0.806 (from 0.732)</span>
+          <span class="pc-metric">CFG &amp; VLM are complementary</span>
+        </div>
+        <div class="pc-tags"><span class="pc-tag">Diffusion Policy</span><span class="pc-tag">Classifier-Free Guidance</span><span class="pc-tag">Best-of-K Reranking</span><span class="pc-tag">Robot Legibility</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Franka Panda</span><span class="pc-tag">Python</span><span class="pc-tag">VLM Scoring</span></div>
       </div>
 
       <div class="project-card">
