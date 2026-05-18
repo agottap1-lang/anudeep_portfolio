@@ -354,10 +354,19 @@
       <div class="project-card">
         <div class="pc-icon">&#128506;</div>
         <h3>Motion Planning for Obstacle-Aware Autonomous Navigation</h3>
-        <div class="pc-date">Aug &ndash; Dec 2024</div>
-        <p>Engineered a real-time path planning system in MATLAB using the A* algorithm for dynamic 2D grid environments. Developed adaptive motion control logic that dynamically adjusts robot speed based on obstacle proximity for collision avoidance.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#9650; 40% collision avoidance improvement</span></div>
-        <div class="pc-tags"><span class="pc-tag">A* Algorithm</span><span class="pc-tag">MATLAB</span><span class="pc-tag">Path Planning</span><span class="pc-tag">Motion Control</span><span class="pc-tag">Real-Time</span></div>
+        <div class="pc-date">MAE 547: Robot Motion Planning &middot; ASU &middot; Aug &ndash; Dec 2024</div>
+        <p>Implemented and compared three motion planning paradigms in MATLAB across 2D navigation and robotic manipulation settings:</p>
+        <ul style="margin:8px 0 10px 18px;font-size:0.92rem;color:var(--text);line-height:1.7;">
+          <li><strong>A* Path Planning</strong> on a 20&times;20 grid with static, fixed, and dynamic obstacles. Robot recomputes the shortest path in real time when a moving obstacle occludes the route; an &ldquo;Optimized&rdquo; mode scales speed proportionally to remaining distance using Euclidean heuristic, achieving smooth deceleration near the goal.</li>
+          <li><strong>RRT (Rapidly-exploring Random Tree)</strong> for a <strong>Franka Emika Panda</strong> robot in a pick-and-place scenario using MATLAB&rsquo;s <code>manipulatorRRT</code>. Benchmarked three parameter configurations (MaxConnectionDistance 0.3&ndash;5, ValidationDistance 0.01&ndash;0.1, ConnectHeuristic on/off) and applied path shortening to reduce trajectory length.</li>
+          <li><strong>6-DOF Manipulator Simulation</strong> (Robotics Toolbox): defined DH parameters for a custom SerialLink arm, computed inverse kinematics via <code>ikine</code>, and generated smooth pick-and-place joint trajectories using quintic polynomial interpolation (<code>jtraj</code>, 50 steps).</li>
+        </ul>
+        <div class="pc-metrics">
+          <span class="pc-metric">&#10003; 3 Planners Implemented</span>
+          <span class="pc-metric">&#10003; Dynamic Obstacle Re-planning</span>
+          <span class="pc-metric">Franka Panda + 6-DOF Arm</span>
+        </div>
+        <div class="pc-tags"><span class="pc-tag">A* Algorithm</span><span class="pc-tag">RRT</span><span class="pc-tag">MATLAB</span><span class="pc-tag">manipulatorRRT</span><span class="pc-tag">Inverse Kinematics</span><span class="pc-tag">Trajectory Planning</span><span class="pc-tag">Franka Panda</span><span class="pc-tag">Robotics Toolbox</span><span class="pc-tag">Dynamic Obstacles</span></div>
       </div>
 
       <div class="project-card">
