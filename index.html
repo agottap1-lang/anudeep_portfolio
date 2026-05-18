@@ -3,526 +3,293 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anudeep Sai Gottapu &mdash; Robotics &amp; AI Engineer</title>
+  <title>Anudeep Sai Gottapu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0f172a; --navy2:#1e293b; --accent:#3b82f6; --text:#1e293b; --muted:#64748b; --light:#f8fafc; --border:#e2e8f0; --white:#ffffff; --radius:10px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family:Inter,system-ui,sans-serif; color:var(--text); background:var(--white); line-height:1.7; font-size:16px; }
-    nav { position:sticky; top:0; z-index:100; background:var(--navy); border-bottom:1px solid rgba(255,255,255,0.06); }
-    .nav-inner { max-width:1100px; margin:auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:58px; }
-    .nav-brand { color:#fff; font-weight:700; font-size:1rem; text-decoration:none; }
-    .nav-links { display:flex; gap:6px; list-style:none; }
-    .nav-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.82rem; font-weight:500; padding:5px 11px; border-radius:6px; transition:background 0.15s,color 0.15s; }
-    .nav-links a:hover { background:rgba(255,255,255,0.1); color:#fff; }
-    .hero { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; padding:88px 24px 80px; text-align:center; }
-    .hero h1 { font-size:clamp(2rem,4.5vw,3rem); font-weight:700; letter-spacing:-0.03em; line-height:1.15; margin-bottom:10px; }
-    .hero-subtitle { font-size:1.05rem; color:rgba(255,255,255,0.72); margin-bottom:8px; }
-    .hero-badge { display:inline-block; background:rgba(59,130,246,0.25); color:#93c5fd; font-size:0.78rem; font-weight:600; padding:4px 14px; border-radius:999px; border:1px solid rgba(59,130,246,0.4); margin-bottom:28px; }
-    .hero-cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:7px; padding:10px 22px; border-radius:8px; font-size:0.88rem; font-weight:600; text-decoration:none; transition:transform 0.15s,box-shadow 0.15s,background 0.15s; }
-    .btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(0,0,0,0.2); }
-    .btn-primary { background:var(--accent); color:#fff; }
-    .btn-primary:hover { background:#2563eb; }
-    .btn-outline { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.4); }
-    .btn-outline:hover { background:rgba(255,255,255,0.08); }
-    .container { max-width:1100px; margin:auto; padding:0 24px; }
-    section { padding:80px 0; }
-    section:nth-child(even) { background:var(--light); }
-    .section-label { display:flex; align-items:center; gap:14px; margin-bottom:44px; }
-    .section-label h2 { font-size:1.5rem; font-weight:700; color:var(--navy); letter-spacing:-0.02em; white-space:nowrap; }
-    .section-label-line { flex:1; height:2px; background:var(--border); border-radius:2px; }
-    .about-grid { display:grid; grid-template-columns:3fr 2fr; gap:48px; align-items:start; }
-    .about-text p { color:var(--muted); font-size:0.97rem; margin-bottom:16px; line-height:1.8; }
-    .about-text p strong { color:var(--text); }
-    .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .stat-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center; }
-    .stat-card .stat-number { font-size:1.5rem; font-weight:700; color:var(--accent); display:block; }
-    .stat-card .stat-desc { font-size:0.75rem; color:var(--muted); font-weight:500; margin-top:4px; }
-    .edu-cards { display:flex; flex-direction:column; gap:20px; }
-    .edu-card { background:var(--white); border:1.5px solid var(--border); border-left:4px solid var(--accent); border-radius:var(--radius); padding:24px 28px; }
-    .edu-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
-    .edu-card h3 { font-size:1.05rem; font-weight:700; color:var(--navy); }
-    .edu-date { font-size:0.8rem; background:var(--light); color:var(--muted); padding:3px 10px; border-radius:999px; white-space:nowrap; font-weight:500; }
-    .edu-degree { font-size:0.92rem; color:var(--accent); font-weight:600; margin-bottom:12px; }
-    .edu-card ul { padding-left:18px; }
-    .edu-card li { font-size:0.86rem; color:var(--muted); margin-bottom:4px; }
-    .thesis-highlight { background:linear-gradient(to right,rgba(59,130,246,0.07),transparent); border:1.5px solid rgba(59,130,246,0.25); border-radius:8px; padding:12px 16px; margin-top:12px; }
-    .thesis-highlight .th-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:4px; }
-    .thesis-highlight p { font-size:0.88rem; color:var(--text); font-weight:500; }
-    .thesis-highlight .th-advisor { font-size:0.78rem; color:var(--muted); margin-top:4px; }
-    .thesis-card { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; border-radius:14px; padding:40px 44px; position:relative; overflow:hidden; }
-    .thesis-card::before { content:''; position:absolute; top:-40px; right:-40px; width:220px; height:220px; background:rgba(59,130,246,0.1); border-radius:50%; }
-    .tc-eyebrow { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#93c5fd; margin-bottom:10px; }
-    .thesis-card h3 { font-size:1.35rem; font-weight:700; line-height:1.3; margin-bottom:14px; max-width:760px; }
-    .tc-meta { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:18px; }
-    .tc-meta span { font-size:0.83rem; color:rgba(255,255,255,0.6); }
-    .tc-body { font-size:0.94rem; color:rgba(255,255,255,0.82); max-width:780px; line-height:1.75; margin-bottom:24px; }
-    .tc-results { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
-    .tc-result { background:rgba(59,130,246,0.18); border:1px solid rgba(59,130,246,0.35); border-radius:10px; padding:18px 22px; flex:1; min-width:155px; }
-    .tc-result-num { font-size:1.6rem; font-weight:700; color:#93c5fd; line-height:1; }
-    .tc-result-label { font-size:0.75rem; color:rgba(255,255,255,0.6); margin-top:6px; line-height:1.45; }
-    .tc-contrib { list-style:none; padding:0; margin:0 0 24px; }
-    .tc-contrib li { font-size:0.88rem; color:rgba(255,255,255,0.82); padding:9px 0 9px 22px; border-bottom:1px solid rgba(255,255,255,0.07); position:relative; line-height:1.6; }
-    .tc-contrib li:last-child { border-bottom:none; }
-    .tc-contrib li::before { content:'\2192'; position:absolute; left:0; color:#93c5fd; font-weight:700; }
-    .tc-tags { display:flex; gap:8px; flex-wrap:wrap; }
-    .tc-tag { background:rgba(59,130,246,0.22); color:#93c5fd; font-size:0.77rem; font-weight:600; padding:4px 12px; border-radius:999px; border:1px solid rgba(59,130,246,0.35); }
-    .timeline { position:relative; padding-left:28px; }
-    .timeline::before { content:''; position:absolute; left:7px; top:8px; bottom:8px; width:2px; background:var(--border); border-radius:2px; }
-    .timeline-item { position:relative; margin-bottom:28px; }
-    .timeline-item::before { content:''; position:absolute; left:-24px; top:8px; width:12px; height:12px; border-radius:50%; background:var(--white); border:2.5px solid var(--accent); }
-    .timeline-item.current::before { background:var(--accent); }
-    .exp-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:22px 26px; transition:border-color 0.15s,box-shadow 0.15s; }
-    .exp-card:hover { border-color:var(--accent); box-shadow:0 4px 20px rgba(59,130,246,0.08); }
-    .exp-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
-    .exp-header h3 { font-size:1rem; font-weight:700; color:var(--navy); }
-    .exp-date { font-size:0.78rem; background:var(--light); color:var(--muted); padding:3px 10px; border-radius:999px; font-weight:500; white-space:nowrap; }
-    .exp-org { font-size:0.87rem; color:var(--accent); font-weight:600; margin-bottom:14px; }
-    .exp-card ul { padding-left:18px; }
-    .exp-card li { font-size:0.87rem; color:var(--muted); margin-bottom:7px; line-height:1.6; }
-    .exp-card li strong { color:var(--text); }
-    .current-badge { display:inline-block; background:rgba(34,197,94,0.1); color:#16a34a; font-size:0.7rem; font-weight:700; padding:2px 9px; border-radius:999px; border:1px solid rgba(34,197,94,0.3); margin-left:8px; vertical-align:middle; }
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:24px; }
-    .project-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:26px; display:flex; flex-direction:column; transition:border-color 0.15s,box-shadow 0.15s,transform 0.15s; }
-    .project-card:hover { border-color:var(--accent); box-shadow:0 6px 24px rgba(59,130,246,0.1); transform:translateY(-2px); }
-    .pc-icon { width:40px; height:40px; background:rgba(59,130,246,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:14px; }
-    .project-card h3 { font-size:0.97rem; font-weight:700; color:var(--navy); margin-bottom:4px; line-height:1.4; }
-    .pc-date { font-size:0.75rem; color:var(--muted); margin-bottom:12px; }
-    .project-card p { font-size:0.87rem; color:var(--muted); flex:1; line-height:1.7; margin-bottom:14px; }
-    .pc-metrics { margin-bottom:12px; }
-    .pc-metric { display:inline-flex; align-items:center; gap:5px; font-size:0.79rem; font-weight:600; color:var(--accent); background:rgba(59,130,246,0.08); padding:3px 10px; border-radius:999px; margin:2px 3px 2px 0; }
-    .pc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; }
-    .pc-tag { font-size:0.73rem; font-weight:500; background:var(--light); color:var(--muted); padding:3px 9px; border-radius:999px; border:1px solid var(--border); }
-    .pc-paper { display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:0.79rem; font-weight:600; color:var(--accent); text-decoration:none; border:1.5px solid rgba(59,130,246,0.3); background:rgba(59,130,246,0.06); padding:5px 12px; border-radius:8px; transition:background 0.15s,border-color 0.15s; }
-    .pc-paper:hover { background:rgba(59,130,246,0.13); border-color:rgba(59,130,246,0.6); }
-    .skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
-    .skill-group { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px 22px; }
-    .skill-group h3 { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:12px; }
-    .skill-tags { display:flex; flex-wrap:wrap; gap:6px; }
-    .skill-tag { font-size:0.8rem; font-weight:500; background:var(--light); color:var(--text); padding:4px 10px; border-radius:6px; border:1px solid var(--border); }
-    .contact-section { background:var(--navy); }
-    .contact-section .section-label h2 { color:#fff; }
-    .contact-section .section-label-line { background:rgba(255,255,255,0.15); }
-    .contact-grid { display:flex; gap:16px; flex-wrap:wrap; }
-    .contact-card { display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.05); border:1.5px solid rgba(255,255,255,0.1); border-radius:var(--radius); padding:16px 22px; text-decoration:none; color:#fff; transition:background 0.15s,border-color 0.15s; }
-    .contact-card:hover { background:rgba(255,255,255,0.09); border-color:rgba(255,255,255,0.25); }
-    .cc-icon { font-size:1.3rem; }
-    .cc-label { font-size:0.75rem; color:rgba(255,255,255,0.5); font-weight:500; }
-    .cc-value { font-size:0.9rem; font-weight:600; }
-    footer { background:var(--navy); border-top:1px solid rgba(255,255,255,0.06); text-align:center; padding:20px 24px; font-size:0.8rem; color:rgba(255,255,255,0.3); }
-    @media(max-width:680px) { .about-grid { grid-template-columns:1fr; } }
-    @media(max-width:600px) { section { padding:52px 0; } .thesis-card { padding:28px 22px; } .projects-grid { grid-template-columns:1fr; } .nav-links { display:none; } }
+    body { font-family: 'Roboto', sans-serif; color: #212121; background: #fff; font-size: 15px; line-height: 1.65; }
+    .page { max-width: 880px; margin: 0 auto; padding: 0 36px; }
+
+    /* HEADER */
+    .site-header { display: grid; grid-template-columns: 1fr auto; gap: 40px; padding: 52px 0 40px; border-bottom: 1px solid #ececec; }
+    @media (max-width: 600px) { .site-header { grid-template-columns: 1fr; } .sh-right { display: none; } }
+    .sh-name { font-size: 1.85rem; font-weight: 700; color: #111; letter-spacing: -0.02em; }
+    .sh-sub { font-size: 0.88rem; color: #757575; margin: 5px 0 2px; }
+    .sh-email { font-size: 0.88rem; color: #1565c0; margin-bottom: 16px; }
+    .sh-bio p { font-size: 0.88rem; color: #424242; line-height: 1.78; margin-bottom: 9px; }
+    .sh-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 18px; }
+    .sh-link { display: inline-flex; align-items: center; gap: 4px; font-size: 0.82rem; font-weight: 500; color: #1565c0; text-decoration: none; }
+    .sh-link:hover { text-decoration: underline; }
+    .sh-link .material-icons { font-size: 16px; }
+    .sh-right { display: flex; align-items: flex-start; padding-top: 8px; }
+    .open-badge { background: #e8f0fe; color: #1a56db; font-size: 0.78rem; font-weight: 500; padding: 8px 16px; border-radius: 20px; text-align: center; line-height: 1.5; white-space: nowrap; }
+
+    /* SECTIONS */
+    section { padding: 36px 0; border-bottom: 1px solid #ececec; }
+    section:last-of-type { border-bottom: none; }
+    .sec-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #bdbdbd; margin-bottom: 22px; }
+
+    /* NEWS */
+    .news-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .news-list li { display: flex; gap: 16px; font-size: 0.85rem; line-height: 1.65; }
+    .news-date { color: #bdbdbd; white-space: nowrap; min-width: 56px; padding-top: 1px; }
+    .news-text { color: #424242; }
+    .news-text a { color: #1565c0; text-decoration: none; }
+    .news-text a:hover { text-decoration: underline; }
+    .news-text em { font-style: italic; }
+
+    /* RESEARCH / PAPER CARD */
+    .paper { margin-bottom: 26px; }
+    .paper:last-child { margin-bottom: 0; }
+    .paper-title { font-size: 0.97rem; font-weight: 700; color: #111; margin-bottom: 3px; line-height: 1.4; }
+    .paper-authors { font-size: 0.83rem; color: #424242; margin-bottom: 2px; }
+    .paper-venue { font-size: 0.8rem; color: #9e9e9e; font-style: italic; margin-bottom: 8px; }
+    .paper-abstract { font-size: 0.855rem; color: #424242; line-height: 1.72; margin-bottom: 10px; }
+    .paper-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .paper-link { display: inline-flex; align-items: center; gap: 4px; font-size: 0.79rem; font-weight: 500; color: #1565c0; text-decoration: none; }
+    .paper-link:hover { text-decoration: underline; }
+    .paper-link .material-icons { font-size: 15px; }
+    .research-intro { font-size: 0.88rem; color: #424242; line-height: 1.78; margin-bottom: 24px; }
+
+    /* PROJECTS */
+    .project-list { display: flex; flex-direction: column; }
+    .project { padding: 18px 0; border-bottom: 1px solid #f5f5f5; }
+    .project:last-child { border-bottom: none; padding-bottom: 0; }
+    .project-title { font-size: 0.92rem; font-weight: 700; color: #111; margin-bottom: 2px; line-height: 1.4; }
+    .project-venue { font-size: 0.78rem; color: #bdbdbd; margin-bottom: 7px; }
+    .project-desc { font-size: 0.855rem; color: #424242; line-height: 1.72; margin-bottom: 9px; }
+    .project-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .project-link { display: inline-flex; align-items: center; gap: 3px; font-size: 0.78rem; font-weight: 500; color: #1565c0; text-decoration: none; }
+    .project-link:hover { text-decoration: underline; }
+    .project-link .material-icons { font-size: 14px; }
+
+    /* EXPERIENCE / EDUCATION */
+    .exp-list { display: flex; flex-direction: column; gap: 16px; }
+    .exp-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+    .exp-left .exp-role { font-size: 0.9rem; font-weight: 700; color: #212121; }
+    .exp-left .exp-org { font-size: 0.82rem; color: #757575; margin-top: 1px; }
+    .exp-date { font-size: 0.79rem; color: #bdbdbd; white-space: nowrap; padding-top: 2px; }
+
+    /* FOOTER */
+    footer { padding: 30px 0 40px; text-align: center; font-size: 0.8rem; color: #bdbdbd; }
+    footer a { color: #bdbdbd; text-decoration: none; }
+    footer a:hover { color: #1565c0; }
   </style>
 </head>
 <body>
+<div class="page">
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="#">Anudeep Sai Gottapu</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#thesis">Thesis</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <header class="site-header">
+    <div class="sh-left">
+      <h1 class="sh-name">Anudeep Sai Gottapu</h1>
+      <p class="sh-sub">MS Robotics &amp; Autonomous Systems &middot; Arizona State University</p>
+      <p class="sh-email">agottap1@asu.edu</p>
+      <div class="sh-bio">
+        <p>I build AI systems for robots that work alongside people &#8212; focusing on motion legibility, policy learning, and making robot intent understandable to human observers. I work in the intersection of vision-language models, diffusion-based policies, and robot learning.</p>
+        <p>My graduate research at ASU&#8217;s LOGOS Robotics Lab asks whether frontier AI models (Gemini, GPT, Claude) can automatically judge how clearly a robot moves. My thesis was approved April 2026. I also have experience in LLM alignment (DPO, RLHF), GPU-scale ML pipelines, and mechanical engineering.</p>
+      </div>
+      <div class="sh-links">
+        <a href="mailto:agottap1@asu.edu" class="sh-link"><span class="material-icons">email</span>Email</a>
+        <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="sh-link"><span class="material-icons">school</span>Google Scholar</a>
+        <a href="https://www.linkedin.com/in/anudeep-sai-gottapu-9641b4138" target="_blank" rel="noopener" class="sh-link"><span class="material-icons">business</span>LinkedIn</a>
+        <a href="https://github.com/agottap1-lang" target="_blank" rel="noopener" class="sh-link"><span class="material-icons">code</span>GitHub</a>
+      </div>
+    </div>
+    <div class="sh-right">
+      <div class="open-badge">Open to Full-Time<br>Roles &middot; May 2026</div>
+    </div>
+  </header>
+
+  <section id="news">
+    <div class="sec-title">News</div>
+    <ul class="news-list">
+      <li>
+        <span class="news-date">Apr &#8217;26</span>
+        <span class="news-text">&#127881; MS Thesis approved &#8212; <em>Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</em> &middot; LOGOS Robotics Lab, ASU</span>
+      </li>
+      <li>
+        <span class="news-date">Jun &#8217;25</span>
+        <span class="news-text">&#128196; Developed VLM Best-of-K trajectory ranking pipeline &#8212; CFG + VLM reranking achieves <strong>L=0.955</strong> legibility score on Franka Panda in PyBullet</span>
+      </li>
+      <li>
+        <span class="news-date">Dec &#8217;24</span>
+        <span class="news-text">&#128300; Joined Yang Lab, ASU &#8212; building the computational backend for a DMD-based Computed Axial Lithography (CAL) volumetric 3D printer</span>
+      </li>
+      <li>
+        <span class="news-date">Aug &#8217;24</span>
+        <span class="news-text">&#127891; Started MS in Robotics &amp; Autonomous Systems at Arizona State University</span>
+      </li>
     </ul>
-  </div>
-</nav>
+  </section>
 
-<header class="hero">
-  <div class="hero-badge">Open to Full-Time Opportunities &middot; May 2026</div>
-  <h1>Anudeep Sai Gottapu</h1>
-  <p class="hero-subtitle">Robotics &amp; AI Engineer &nbsp;&middot;&nbsp; MS Robotics &amp; Autonomous Systems, Arizona State University</p>
-  <p class="hero-subtitle" style="margin-bottom:24px;font-size:0.9rem;">(480) 246-0043</p>
-  <div class="hero-cta">
-    <a href="mailto:agottap1@asu.edu" class="btn btn-primary">&#9993; agottap1@asu.edu</a>
-    <a href="https://www.linkedin.com/in/anudeep-sai-gottapu-9641b4138" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn &#8599;</a>
-    <a href="https://github.com/agottap1-lang" target="_blank" rel="noopener" class="btn btn-outline">GitHub &#8599;</a>
-  </div>
-</header>
-
-<section id="about">
-  <div class="container">
-    <div class="section-label"><h2>About Me</h2><div class="section-label-line"></div></div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I build <strong>AI systems for robots that work alongside people</strong> in real environments. My focus is on making robots that can see what they are doing, understand their own motion, and communicate their intent clearly enough for humans to trust them.</p>
-        <p>My graduate research at ASU asks whether <strong>frontier AI models like GPT and Gemini can automatically judge how clearly a robot moves</strong>, replacing the need for human observers. My thesis was approved April 2026. I also have hands-on experience in LLM alignment (DPO, RLHF), diffusion model training, GPU-scale ML pipelines (A100, CUDA), and mechanical engineering (CAD, FEA, manufacturing).</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-card"><span class="stat-number">4+</span><span class="stat-desc">Years Engineering Experience</span></div>
-        <div class="stat-card"><span class="stat-number">2</span><span class="stat-desc">Research Labs at ASU</span></div>
-        <div class="stat-card"><span class="stat-number">11</span><span class="stat-desc">Projects (AI, Robotics, Mech)</span></div>
-        <div class="stat-card"><span class="stat-number">Apr&nbsp;2026</span><span class="stat-desc">MS Thesis Approved</span></div>
+  <section id="research">
+    <div class="sec-title">Research</div>
+    <p class="research-intro">My research focuses on making robots more legible and trustworthy to human observers. I study whether frontier vision-language models can serve as automated proxies for human judgment of robot motion, and how these judgments can guide policy learning without human-in-the-loop annotation at scale.</p>
+    <div class="paper">
+      <div class="paper-title">Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</div>
+      <div class="paper-authors">Anudeep Sai Gottapu, Nakul Gopalan</div>
+      <div class="paper-venue">MS Thesis &middot; LOGOS Robotics Lab, Arizona State University &middot; Committee: Hani ben Amor, Kunal Garg &middot; Approved April 2026</div>
+      <div class="paper-abstract">We ask whether frontier VLMs (Gemini 3 Pro, GPT-5.4, Claude Opus 4.5) can replace human observers in evaluating robot motion legibility, building a cumulative prefix-frame prompting pipeline benchmarked on 8 manipulation scenarios and achieving 67.7% goal-inference accuracy with Gemini. We extend this to guide Best-of-K trajectory selection inside a behavior-conditioned diffusion policy, achieving L=0.955 legibility with CFG+VLM reranking vs. a baseline of 0.919 &#8212; showing that VLM scoring and CFG are complementary, not interchangeable.</div>
+      <div class="paper-links">
+        <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="paper-link"><span class="material-icons">school</span>Google Scholar</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="education">
-  <div class="container">
-    <div class="section-label"><h2>Education</h2><div class="section-label-line"></div></div>
-    <div class="edu-cards">
-      <div class="edu-card">
-        <div class="edu-header">
-          <h3>Arizona State University &mdash; Tempe, AZ</h3>
-          <span class="edu-date">Aug 2024 &ndash; May 2026</span>
+  <section id="projects">
+    <div class="sec-title">Projects</div>
+    <div class="project-list">
+
+      <div class="project">
+        <div class="project-title">LLM Alignment via Direct Preference Optimization (DPO)</div>
+        <div class="project-venue">Feb &ndash; Apr 2025</div>
+        <div class="project-desc">Implemented SFT + DPO for LLM alignment on Anthropic HH-RLHF to study how preference data shapes model behavior &#8212; because alignment signals matter for robot policy learning too. Achieved 25.8% accuracy gain and 22% faster training on A100; I want to bring DPO-style preference alignment directly into robot trajectory optimization.</div>
+        <div class="project-links">
+          <a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener" class="project-link"><span class="material-icons">picture_as_pdf</span>arXiv (Rafailov et al., 2023)</a>
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
         </div>
-        <div class="edu-degree">Master of Science &middot; Robotics and Autonomous Systems</div>
-        <div class="thesis-highlight">
-          <div class="th-label">Thesis &mdash; Approved April 2026</div>
-          <p>Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</p>
-          <div class="th-advisor">Advisor: Prof. Nakul Gopalan &nbsp;&middot;&nbsp; Committee: Hani ben Amor, Kunal Garg &nbsp;&middot;&nbsp; LOGOS Robotics Lab</div>
-        </div>
-        <ul style="margin-top:14px;">
-          <li>Applied Machine Learning &middot; Reinforcement Learning Algorithms &middot; Multi-Robot Systems (MAE 598)</li>
-          <li>Mechanics of Micro/Nano Systems (MAE 519) &middot; Robot Motion Planning (MAE 547) &middot; Advanced System Modelling &amp; Control</li>
-          <li>Linear Algebra for Engineers &middot; Battery Science &amp; Engineering &middot; Applied ML for Mechanical Engineering</li>
-        </ul>
       </div>
-      <div class="edu-card">
-        <div class="edu-header">
-          <h3>Sreenidhi Institute of Science and Technology &mdash; Hyderabad, India</h3>
-          <span class="edu-date">Aug 2016 &ndash; Sep 2020</span>
+
+      <div class="project">
+        <div class="project-title">Diffusion Model Fine-Tuning with Reinforcement Learning (DDPO + LoRA)</div>
+        <div class="project-venue">May &ndash; Jun 2025</div>
+        <div class="project-desc">Fine-tuned Stable Diffusion v1.5 with Denoising Diffusion Policy Optimization (DDPO) + LoRA on A100, optimizing for reward-driven objectives to generate 1,000+ outputs at &le;4s latency &#8212; exploring how diffusion models respond to reward shaping. I want to apply reward-guided diffusion to robot motion synthesis, generating trajectories that score well on legibility rewards.</div>
+        <div class="project-links">
+          <a href="https://arxiv.org/abs/2305.13301" target="_blank" rel="noopener" class="project-link"><span class="material-icons">picture_as_pdf</span>arXiv (Black et al., 2023)</a>
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
         </div>
-        <div class="edu-degree">Bachelor of Technology &middot; Mechanical Engineering</div>
-        <ul style="margin-top:10px;">
-          <li>Data Structures &amp; Algorithms (C++) &middot; Automation and Robotics &middot; Finite Element Analysis (FEA)</li>
-          <li>Applied Thermodynamics &middot; Mechanics of Materials &middot; Fluid Mechanics &amp; Hydraulics &middot; Machine Design</li>
-        </ul>
       </div>
+
+      <div class="project">
+        <div class="project-title">Motion Planning for Obstacle-Aware Autonomous Navigation</div>
+        <div class="project-venue">MAE 547: Robot Motion Planning &middot; ASU &middot; 2024</div>
+        <div class="project-desc">Implemented A*, RRT, and 6-DOF IK in MATLAB to benchmark classical planners on 2D grid navigation and Franka Panda pick-and-place with dynamic obstacle re-planning &#8212; building fluency with the foundations of motion planning. I want to combine classical planner feasibility guarantees with learned legibility rewards to generate paths that are both safe and human-interpretable.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">RLHF-Based LiDAR Data Processing &amp; Policy Alignment</div>
+        <div class="project-venue">Jan &ndash; May 2025</div>
+        <div class="project-desc">Applied RLHF + DPO to align a LiDAR point cloud perception model with human annotator preferences on autonomous driving data, testing whether language-model alignment techniques transfer to sensor modalities. I want to explore how preference-aligned perception outputs can improve the quality of downstream robot decisions.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Volumetric 3D Printing Control System (Computed Axial Lithography)</div>
+        <div class="project-venue">Yang Lab &middot; ASU &middot; Dec 2024 &ndash; Jun 2025</div>
+        <div class="project-desc">Built voxelization algorithms and sinogram generation pipelines in Python/MATLAB for a DMD-based volumetric 3D printer (same tomographic principle as CT scanners), enabling layer-free fabrication. I want to explore how volumetric manufacturing can accelerate the design and iteration of soft robot bodies and compliant grippers.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Cooperative UGV Coverage for Disaster-Zone Cell Network Deployment</div>
+        <div class="project-venue">MAE 598: Multi-Robot Systems &middot; ASU &middot; 2024&ndash;2025</div>
+        <div class="project-desc">Designed a distributed Voronoi coverage controller for 8 UGVs to restore cellular connectivity post-disaster, proving convergence via Lyapunov&#8217;s direct method and LaSalle&#8217;s invariance principle, then validating in Python simulation with obstacle avoidance. I want to combine these formal coverage guarantees with learned communication strategies for more adaptive multi-robot coordination.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Multi-Robot SLAM &amp; Sensor Fusion</div>
+        <div class="project-venue">Coursework &middot; ASU</div>
+        <div class="project-desc">Implemented collaborative SLAM in ROS2/Gazebo integrating LiDAR, camera, and IMU data across multiple robots, studying how shared maps emerge from distributed sensing. I want to extend this with learned place-recognition representations that are more robust to appearance changes than hand-crafted features.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Flexible MEMS Sensors &amp; Actuators for Robotic Applications</div>
+        <div class="project-venue">MAE 519: Mechanics of Micro/Nano Systems &middot; ASU &middot; 2024&ndash;2025</div>
+        <div class="project-desc">Research survey on flexible MEMS sensing (piezoresistive, capacitive, piezoelectric) and actuation (DEAs, SMA, pneumatic) for soft robotics, covering microfabrication and materials (PVDF, graphene composites). I want to integrate compliant sensing into learned manipulation policies so robots can feel contact forces alongside seeing them.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Prototyping &amp; Testing of Advanced Mechanical Systems</div>
+        <div class="project-venue">Aparna Craft Exteriors &middot; 2022&ndash;2024</div>
+        <div class="project-desc">Led design validation and FDM/CNC prototyping for 30+ facade projects worth $2.8M, reducing development time by 20% through tighter vendor management and material selection. This grounded me in the manufacturing constraints that make or break real-world deployments &#8212; something I want to carry into physical robot hardware development.</div>
+        <div class="project-links">
+          <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener" class="project-link"><span class="material-icons">school</span>Scholar</a>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="thesis">
-  <div class="container">
-    <div class="section-label"><h2>Thesis Research</h2><div class="section-label-line"></div></div>
-    <div class="thesis-card">
-      <div class="tc-eyebrow">MS Thesis &middot; Arizona State University &middot; Approved April 2026</div>
-      <h3>Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</h3>
-      <div class="tc-meta">
-        <span>&#127891; Advisor: Prof. Nakul Gopalan</span>
-        <span>&#129302; LOGOS Robotics Lab, ASU</span>
-        <span>&#128101; Committee: Hani ben Amor &middot; Kunal Garg</span>
-      </div>
-      <p class="tc-body">Can AI models like Gemini, GPT, or Claude watch a robot move and judge whether its intent is clear &mdash; replacing human observers? This thesis builds that system and extends it to guide trajectory selection inside diffusion policies.</p>
-      <div class="tc-results">
-        <div class="tc-result">
-          <div class="tc-result-num">67.7%</div>
-          <div class="tc-result-label">Goal-inference accuracy<br>Gemini 3 Pro (best of 3 VLMs)</div>
-        </div>
-        <div class="tc-result">
-          <div class="tc-result-num">L&nbsp;=&nbsp;0.955</div>
-          <div class="tc-result-label">Legibility score<br>CFG + VLM reranking</div>
-        </div>
-        <div class="tc-result">
-          <div class="tc-result-num">L&nbsp;=&nbsp;0.806</div>
-          <div class="tc-result-label">Best-of-16 VLM selection<br>(from 0.732 unguided)</div>
-        </div>
-      </div>
-      <ul class="tc-contrib">
-        <li>VLM goal-inference pipeline using cumulative prefix-frame prompting &mdash; tested on 8 robot manipulation scenarios (legible and ambiguous variants), structured JSON outputs (pA, pB, visual cue, legibility flag)</li>
-        <li>Behavior-conditioned diffusion policy (DDPM + classifier-free guidance, &lambda;=2.0) trained across legibility, predictability, safety, and grounding behaviors in PyBullet on a simulated Franka Panda arm</li>
-        <li>5-stage Best-of-K trajectory ranking: generate K candidates &rarr; render frames &rarr; VLM score &rarr; re-execute best; legibility improves monotonically with K</li>
-        <li>Cross-model benchmark across Gemini 3 Pro, GPT-5.4, Claude Opus 4.5 &mdash; CFG and VLM reranking are complementary, not interchangeable</li>
-      </ul>
-      <div class="tc-tags">
-        <span class="tc-tag">Vision-Language Models</span>
-        <span class="tc-tag">Robot Motion Legibility</span>
-        <span class="tc-tag">Diffusion Policy</span>
-        <span class="tc-tag">Best-of-K Reranking</span>
-        <span class="tc-tag">Prefix-Frame Prompting</span>
-        <span class="tc-tag">Gemini &middot; GPT &middot; Claude</span>
-        <span class="tc-tag">PyBullet &middot; Franka Panda</span>
-        <span class="tc-tag">Python</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-label"><h2>Experience</h2><div class="section-label-line"></div></div>
-    <div class="timeline">
-
-      <div class="timeline-item current">
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Research Associate <span class="current-badge">Current</span></h3>
-            <span class="exp-date">Jun 2025 &ndash; Present</span>
-          </div>
+  <section id="experience">
+    <div class="sec-title">Experience</div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-role">Research Associate</div>
           <div class="exp-org">LOGOS Robotics Lab &middot; Arizona State University, Tempe</div>
-          <ul>
-            <li>Built a <strong>VLM goal-inference evaluation pipeline</strong> using prefix-frame prompting; benchmarked Gemini 3 Pro (67.7%), Claude Opus 4.5 (64.5%), and GPT-5.4 (61.3%) on 8 robot manipulation videos</li>
-            <li>Trained a <strong>behavior-conditioned diffusion policy (DDPM + CFG, &lambda;=2.0)</strong> across legibility, predictability, safety, and grounding in PyBullet on a simulated Franka Panda arm</li>
-            <li>Designed a 5-stage <strong>Best-of-K VLM trajectory ranking pipeline</strong>; CFG + VLM reranking achieved <strong>L=0.955</strong> legibility vs. unguided baseline of 0.919</li>
-            <li>Designed <strong>structured JSON prompt schemas</strong> (pA/pB probabilities, visual cue, legibility flag) for automated parsing across thousands of VLM API calls; thesis approved April 2026</li>
-          </ul>
         </div>
+        <div class="exp-date">Jun 2025 &ndash; Present</div>
       </div>
-
-      <div class="timeline-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Research Associate</h3>
-            <span class="exp-date">Dec 2024 &ndash; Jun 2025</span>
-          </div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-role">Research Associate</div>
           <div class="exp-org">Yang Lab &middot; Arizona State University, Tempe</div>
-          <ul>
-            <li>Built the computational backend for a <strong>DMD-based Computed Axial Lithography (CAL)</strong> volumetric 3D printer &mdash; voxelization algorithms in Python &amp; MATLAB and sinogram generation pipelines for optical control</li>
-            <li>Surveyed fabrication methods, materials, and sensing principles of <strong>soft MEMS actuators</strong> (piezoresistive, capacitive, piezoelectric; elastomeric composites, PVDF)</li>
-            <li>Delivered technical presentation on <strong>RLHF-based LiDAR data processing and DPO policy alignment</strong></li>
-          </ul>
         </div>
+        <div class="exp-date">Dec 2024 &ndash; Jun 2025</div>
       </div>
-
-      <div class="timeline-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Junior Engineer &mdash; R&amp;D</h3>
-            <span class="exp-date">Jun 2023 &ndash; Jul 2024</span>
-          </div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-role">Junior Engineer &mdash; R&amp;D</div>
           <div class="exp-org">Aparna Craft Exteriors &middot; Hyderabad, India</div>
-          <ul>
-            <li>Drove R&amp;D via <strong>3D printing and CNC machining</strong> prototyping; reduced development time by 20% through vendor management and material procurement</li>
-            <li>Researched industrial automation technologies &mdash; <strong>SCADA, FANUC, KUKA, ABB</strong> systems for manufacturing integration</li>
-            <li>Applied <strong>Lean Manufacturing</strong> principles (5S, Kaizen, APQP, SPC, FMEA); achieved 10% OEE increase, 35% productivity improvement, 25% downtime reduction</li>
-            <li>Tested facade fabrication techniques for projects worth <strong>$2.8M</strong>; secured ~$360K in contracts; mentored junior engineers in SOPs and EHS compliance</li>
-          </ul>
         </div>
+        <div class="exp-date">Jun 2023 &ndash; Jul 2024</div>
       </div>
-
-      <div class="timeline-item">
-        <div class="exp-card">
-          <div class="exp-header">
-            <h3>Engineer Trainee</h3>
-            <span class="exp-date">May 2022 &ndash; Jun 2023</span>
-          </div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-role">Engineer Trainee</div>
           <div class="exp-org">Aparna Craft Exteriors &middot; Hyderabad, India</div>
-          <ul>
-            <li>Created production files and assembly drawings in <strong>Orgadata &amp; AutoCAD</strong> with GD&amp;T; streamlined manufacturing by 25%, improved accuracy by 30%</li>
-            <li>Executed cost-saving design modifications in <strong>SolidWorks</strong>; updated BOMs in PLM, reducing costs by 10%; redesigned layouts for 50% better space utilization</li>
-            <li>Verified manufacturability for <strong>30+ facade projects</strong> nationwide; managed design iterations via PDM systems</li>
-          </ul>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div class="section-label"><h2>Projects</h2><div class="section-label-line"></div></div>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="pc-icon">&#129302;</div>
-        <h3>VLM-Based Robot Motion Legibility Evaluation</h3>
-        <div class="pc-date">MS Thesis &middot; LOGOS Robotics Lab, ASU &middot; 2024&ndash;2026</div>
-        <p>Built a pipeline to test whether frontier AI models can judge how clearly a robot communicates its intent through motion. Videos are split into cumulative frame prefixes and fed to a VLM with structured prompts requesting goal probabilities and legibility judgment. Evaluated across 8 manipulation scenarios (legible and ambiguous variants).</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">Gemini 3 Pro: 67.7%</span>
-          <span class="pc-metric">Claude: 64.5%</span>
-          <span class="pc-metric">GPT-5.4: 61.3%</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">VLMs</span><span class="pc-tag">Robot Legibility</span><span class="pc-tag">Goal Inference</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Python</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#127919;</div>
-        <h3>VLM Best-of-K Trajectory Ranking for Diffusion Policies</h3>
-        <div class="pc-date">MS Thesis &middot; LOGOS Robotics Lab, ASU &middot; 2025&ndash;2026</div>
-        <p>Behavior-conditioned diffusion policy (DDPM + classifier-free guidance) generates K candidate trajectories via different noise seeds. Each is rendered to frames and scored by a VLM across legibility, predictability, safety, and grounding. The highest-scoring candidate is re-executed.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">CFG+VLM: L=0.955</span>
-          <span class="pc-metric">Best-of-16: L=0.806</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">Diffusion Policy</span><span class="pc-tag">CFG</span><span class="pc-tag">Best-of-K</span><span class="pc-tag">PyBullet</span><span class="pc-tag">Python</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#129504;</div>
-        <h3>LLM Alignment via Direct Preference Optimization (DPO)</h3>
-        <div class="pc-date">Feb &ndash; Apr 2025</div>
-        <p>Implemented SFT + DPO preference-based alignment on LLMs using the Anthropic HH-RLHF dataset. Optimized distributed GPU training on A100 with AdamW, cosine LR scheduling, gradient accumulation, and checkpoint recovery.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">&#9650; 25.8% alignment accuracy</span>
-          <span class="pc-metric">&#9650; 22% faster training</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">DPO</span><span class="pc-tag">RLHF</span><span class="pc-tag">LoRA</span><span class="pc-tag">FSDP</span><span class="pc-tag">A100</span><span class="pc-tag">HuggingFace</span></div>
-        <a class="pc-paper" href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener">&#128196; Rafailov et al. (2023) &mdash; Direct Preference Optimization</a>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#127912;</div>
-        <h3>Diffusion Model Fine-Tuning with RL (DDPO + LoRA)</h3>
-        <div class="pc-date">May &ndash; Jun 2025</div>
-        <p>Fine-tuned Stable Diffusion v1.5 using Denoising Diffusion Policy Optimization (DDPO) + LoRA across 100 epochs on A100, optimizing for reward-driven objectives (aesthetic quality, compressibility). Built a production-ready CLI and batch generator.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">1,000+ structured outputs</span>
-          <span class="pc-metric">&#9889; &le;4 s latency</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">Stable Diffusion</span><span class="pc-tag">DDPO</span><span class="pc-tag">LoRA</span><span class="pc-tag">Diffusers</span><span class="pc-tag">A100</span><span class="pc-tag">RL</span></div>
-        <a class="pc-paper" href="https://arxiv.org/abs/2305.13301" target="_blank" rel="noopener">&#128196; Black et al. (2023) &mdash; Training Diffusion Models with RL (DDPO)</a>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#128506;</div>
-        <h3>Motion Planning for Autonomous Navigation</h3>
-        <div class="pc-date">MAE 547: Robot Motion Planning &middot; ASU &middot; Aug &ndash; Dec 2024</div>
-        <p>Implemented and compared three planners in MATLAB: <strong>A*</strong> on a 20&times;20 grid with static and dynamic obstacle re-planning; <strong>RRT</strong> for Franka Emika Panda pick-and-place using <code>manipulatorRRT</code> with benchmarked parameters and path shortening; and a <strong>6-DOF SerialLink arm</strong> with DH parameters, inverse kinematics, and quintic polynomial joint trajectories.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">&#10003; 3 Planners Implemented</span>
-          <span class="pc-metric">&#10003; Dynamic Re-planning</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">A*</span><span class="pc-tag">RRT</span><span class="pc-tag">MATLAB</span><span class="pc-tag">Inverse Kinematics</span><span class="pc-tag">Franka Panda</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#128225;</div>
-        <h3>RLHF-Based LiDAR Data Processing &amp; Policy Alignment</h3>
-        <div class="pc-date">Jan &ndash; May 2025</div>
-        <p>Developed an RLHF pipeline for LiDAR point cloud data. Applied policy alignment via DPO to train perception models that match annotator preferences on autonomous driving scenarios.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#10003; Policy Aligned via DPO</span></div>
-        <div class="pc-tags"><span class="pc-tag">RLHF</span><span class="pc-tag">LiDAR</span><span class="pc-tag">Point Clouds</span><span class="pc-tag">DPO</span><span class="pc-tag">PyTorch</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#128424;</div>
-        <h3>Volumetric 3D Printing Control System (CAL)</h3>
-        <div class="pc-date">Dec 2024 &ndash; Jun 2025 &middot; Yang Lab</div>
-        <p>Built the computational backend for a DMD-based volumetric 3D printer using Computed Axial Lithography &mdash; the same tomographic reconstruction principle used in CT scanners. Developed voxelization algorithms and sinogram generation pipelines for layer-free optical fabrication.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#10003; Lab Deployed</span></div>
-        <div class="pc-tags"><span class="pc-tag">CAL / Tomography</span><span class="pc-tag">Python</span><span class="pc-tag">NumPy</span><span class="pc-tag">MATLAB</span><span class="pc-tag">DMD Control</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#129302;</div>
-        <h3>Multi-Robot SLAM &amp; Sensor Fusion</h3>
-        <div class="pc-date">Coursework &middot; ASU</div>
-        <p>Implemented SLAM pipelines for multi-robot coordination integrating LiDAR, camera, and IMU data. Evaluated occupancy map quality across multiple robots operating simultaneously in ROS2 / Gazebo simulation.</p>
-        <div class="pc-tags"><span class="pc-tag">SLAM</span><span class="pc-tag">ROS2</span><span class="pc-tag">Sensor Fusion</span><span class="pc-tag">LiDAR</span><span class="pc-tag">Gazebo</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#128295;</div>
-        <h3>Prototyping &amp; Testing of Advanced Mechanical Systems</h3>
-        <div class="pc-date">Aparna Craft Exteriors &middot; 2022&ndash;2024</div>
-        <p>Led mechanical design validation using AutoCAD and GD&amp;T aligned to ASME Y14.5 standards. Managed quality testing of FDM 3D-printed parts and directed procurement and cost-benefit analysis across 30+ projects.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">&#9650; 20% durability</span>
-          <span class="pc-metric">&#9660; 15% procurement time</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">SolidWorks</span><span class="pc-tag">ANSYS FEA</span><span class="pc-tag">AutoCAD</span><span class="pc-tag">GD&amp;T</span><span class="pc-tag">FDM 3D Printing</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#128225;</div>
-        <h3>Cooperative UGV Coverage for Disaster-Zone Cell Network Deployment</h3>
-        <div class="pc-date">MAE 598: Multi-Robot Systems &middot; ASU &middot; 2024&ndash;2025</div>
-        <p>Distributed coverage controller for 8 UGVs restoring cellular connectivity after disasters. Each robot converges to the population-weighted centroid of its Voronoi cell; convergence is proved via Lyapunov&rsquo;s direct method and LaSalle&rsquo;s invariance principle. Validated in Python with obstacle avoidance and communication-chain tether constraints.</p>
-        <div class="pc-metrics">
-          <span class="pc-metric">&#10003; Lyapunov Stability Proven</span>
-          <span class="pc-metric">8 UGVs</span>
-        </div>
-        <div class="pc-tags"><span class="pc-tag">Multi-Robot Systems</span><span class="pc-tag">Voronoi Coverage</span><span class="pc-tag">Lyapunov Analysis</span><span class="pc-tag">Distributed Control</span><span class="pc-tag">Python</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="pc-icon">&#129520;</div>
-        <h3>Flexible MEMS Sensors &amp; Actuators for Robotic Applications</h3>
-        <div class="pc-date">MAE 519: Mechanics of Micro/Nano Systems &middot; ASU &middot; 2024&ndash;2025</div>
-        <p>Research survey on flexible MEMS for next-generation robotics: microfabrication techniques (photolithography, DRIE, CVD), sensing mechanisms (piezoresistive, capacitive, piezoelectric), and actuator types (DEAs, SMA, pneumatic). Materials include PVDF and graphene composites; applications span soft robotics, wearables, and healthcare.</p>
-        <div class="pc-metrics"><span class="pc-metric">&#10003; Research Survey</span></div>
-        <div class="pc-tags"><span class="pc-tag">MEMS</span><span class="pc-tag">Flexible Sensors</span><span class="pc-tag">Soft Robotics</span><span class="pc-tag">Microfabrication</span><span class="pc-tag">PVDF</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div class="section-label"><h2>Skills</h2><div class="section-label-line"></div></div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3>Robotics &amp; Simulation</h3>
-        <div class="skill-tags"><span class="skill-tag">ROS / ROS2</span><span class="skill-tag">MoveIt</span><span class="skill-tag">MuJoCo</span><span class="skill-tag">PyBullet</span><span class="skill-tag">Isaac Gym</span><span class="skill-tag">Isaac Sim</span><span class="skill-tag">Gazebo</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>Programming</h3>
-        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">C</span><span class="skill-tag">Java</span><span class="skill-tag">MATLAB</span><span class="skill-tag">SQL</span><span class="skill-tag">Bash</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>AI / ML Frameworks</h3>
-        <div class="skill-tags"><span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">JAX / Flax</span><span class="skill-tag">Keras</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">TensorRT</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>AI / ML Techniques</h3>
-        <div class="skill-tags"><span class="skill-tag">RLHF / PPO / SAC</span><span class="skill-tag">GRPO</span><span class="skill-tag">DPO</span><span class="skill-tag">LoRA / FSDP</span><span class="skill-tag">Behavior Cloning</span><span class="skill-tag">Diffusion Models</span><span class="skill-tag">Self-Supervised Learning</span><span class="skill-tag">Agentic AI</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>NLP &amp; Retrieval</h3>
-        <div class="skill-tags"><span class="skill-tag">RAG</span><span class="skill-tag">Vector Embeddings</span><span class="skill-tag">FAISS</span><span class="skill-tag">BERT</span><span class="skill-tag">LangChain</span><span class="skill-tag">Qdrant</span><span class="skill-tag">Pinecone</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>Robot Perception</h3>
-        <div class="skill-tags"><span class="skill-tag">SLAM</span><span class="skill-tag">Sensor Fusion</span><span class="skill-tag">LiDAR</span><span class="skill-tag">Cameras</span><span class="skill-tag">Radar</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Point Clouds</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>Infrastructure &amp; Tools</h3>
-        <div class="skill-tags"><span class="skill-tag">CUDA</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">Linux</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">GCP / AWS</span><span class="skill-tag">CI/CD</span><span class="skill-tag">W&amp;B</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>CAD &amp; Design Software</h3>
-        <div class="skill-tags"><span class="skill-tag">SolidWorks</span><span class="skill-tag">CATIA</span><span class="skill-tag">Creo</span><span class="skill-tag">AutoCAD</span><span class="skill-tag">Siemens NX</span><span class="skill-tag">ANSYS FEA</span><span class="skill-tag">GD&amp;T</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>Quality &amp; Manufacturing</h3>
-        <div class="skill-tags"><span class="skill-tag">Lean / Six Sigma</span><span class="skill-tag">FMEA / DFMEA</span><span class="skill-tag">APQP / SPC</span><span class="skill-tag">Kaizen / 5S</span><span class="skill-tag">NDT</span><span class="skill-tag">CNC Machining</span><span class="skill-tag">FDM 3D Printing</span><span class="skill-tag">SAP ERP</span></div>
-      </div>
-      <div class="skill-group">
-        <h3>Hardware &amp; Control</h3>
-        <div class="skill-tags"><span class="skill-tag">MPC</span><span class="skill-tag">PLCs</span><span class="skill-tag">CAN Bus</span><span class="skill-tag">Arduino</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">IoT</span><span class="skill-tag">Simulink</span></div>
+        <div class="exp-date">May 2022 &ndash; Jun 2023</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="contact-section">
-  <div class="container">
-    <div class="section-label"><h2>Get In Touch</h2><div class="section-label-line"></div></div>
-    <p style="color:rgba(255,255,255,0.6);margin-bottom:28px;font-size:0.95rem;">Actively looking for full-time roles in Robotics, AI/ML, and Autonomous Systems. Graduating May 2026. Let&apos;s talk.</p>
-    <div class="contact-grid">
-      <a href="tel:+14802460043" class="contact-card">
-        <span class="cc-icon">&#128222;</span>
-        <div><div class="cc-label">Phone</div><div class="cc-value">(480) 246-0043</div></div>
-      </a>
-      <a href="mailto:agottap1@asu.edu" class="contact-card">
-        <span class="cc-icon">&#9993;</span>
-        <div><div class="cc-label">Email</div><div class="cc-value">agottap1@asu.edu</div></div>
-      </a>
-      <a href="https://www.linkedin.com/in/anudeep-sai-gottapu-9641b4138" target="_blank" rel="noopener" class="contact-card">
-        <span class="cc-icon">&#128188;</span>
-        <div><div class="cc-label">LinkedIn</div><div class="cc-value">anudeep-sai-gottapu</div></div>
-      </a>
-      <a href="https://github.com/agottap1-lang" target="_blank" rel="noopener" class="contact-card">
-        <span class="cc-icon">&#128025;</span>
-        <div><div class="cc-label">GitHub</div><div class="cc-value">agottap1-lang</div></div>
-      </a>
+  <section id="education">
+    <div class="sec-title">Education</div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-role">MS, Robotics and Autonomous Systems</div>
+          <div class="exp-org">Arizona State University &middot; Advisor: Prof. Nakul Gopalan &middot; LOGOS Robotics Lab</div>
+        </div>
+        <div class="exp-date">2024 &ndash; 2026</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-role">BTech, Mechanical Engineering</div>
+          <div class="exp-org">Sreenidhi Institute of Science and Technology &middot; Hyderabad, India</div>
+        </div>
+        <div class="exp-date">2016 &ndash; 2020</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>&#169; 2026 Anudeep Sai Gottapu &nbsp;&middot;&nbsp; Robotics &amp; AI Engineer</footer>
+  <footer>
+    Anudeep Sai Gottapu &nbsp;&middot;&nbsp;
+    <a href="mailto:agottap1@asu.edu">agottap1@asu.edu</a> &nbsp;&middot;&nbsp;
+    <a href="https://scholar.google.com/citations?user=btrxZnAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> &nbsp;&middot;&nbsp;
+    <a href="https://github.com/agottap1-lang" target="_blank" rel="noopener">GitHub</a>
+  </footer>
 
+</div>
 </body>
 </html>
