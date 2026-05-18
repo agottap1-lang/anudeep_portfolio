@@ -148,9 +148,9 @@
     <div class="section-label"><h2>About Me</h2><div class="section-label-line"></div></div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I am a <strong>Robotics &amp; AI Engineer</strong> at the intersection of multimodal deep learning, robot manipulation, and real-world deployment. My work spans the full ML stack &mdash; from dataset curation and model training to sim-to-real transfer on physical robot arms.</p>
-        <p>My graduate research focuses on <strong>Vision-Language Action (VLA) models for safe robot motion</strong> &mdash; training policies that ground natural language in visual perception and generate collision-free trajectories, deployed on a Franka Emika Panda arm. I have contributed experiments toward <strong>ICRA / CoRL</strong> submissions.</p>
-        <p>Beyond robotics, I have hands-on experience in <strong>LLM fine-tuning (DPO, RLHF, GRPO)</strong>, generative model training (diffusion + LoRA), distributed GPU infrastructure (CUDA, FSDP, A100), and production ML pipelines. My mechanical engineering background adds depth in <strong>CAD, FEA, manufacturing processes, and Lean / Six Sigma</strong>.</p>
+        <p>I build <strong>AI systems for robots that need to work in the real world</strong> &mdash; alongside people, in real environments, at scale. My focus is making robots that can see, understand what they are doing, and explain their actions clearly enough for humans to trust them.</p>
+        <p>My graduate research at ASU&rsquo;s LOGOS Robotics Lab asks a direct question: <strong>can AI models like GPT and Gemini judge how clearly a robot communicates its intent through motion?</strong> If yes, we can automate a quality check that today requires human observers &mdash; making it possible to test and improve robot behavior at scale. My thesis was approved in April 2026.</p>
+        <p>I have shipped real systems end-to-end: trained and fine-tuned <strong>large language and vision models</strong> (DPO, RLHF, diffusion), built GPU-scale training pipelines on A100 clusters, and deployed manipulation policies on a physical <strong>Franka Emika Panda</strong> robot arm. My background in mechanical engineering means I can work across the full stack &mdash; from hardware and CAD all the way through to model training and evaluation.</p>
       </div>
       <div class="about-stats">
         <div class="stat-card"><span class="stat-number">4+</span><span class="stat-desc">Years Engineering Experience</span></div>
@@ -173,9 +173,9 @@
         </div>
         <div class="edu-degree">Master of Science &middot; Robotics and Autonomous Systems</div>
         <div class="thesis-highlight">
-          <div class="th-label">Thesis</div>
-          <p>Improving Vision-Language Action Models Alignment Using Human Preference</p>
-          <div class="th-advisor">Advisor: Prof. Nakul Gopalan &nbsp;&middot;&nbsp; Logos Robotics Lab</div>
+          <div class="th-label">Thesis &mdash; Approved April 2026</div>
+          <p>Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</p>
+          <div class="th-advisor">Advisor: Prof. Nakul Gopalan &nbsp;&middot;&nbsp; Committee: Hani ben Amor, Kunal Garg &nbsp;&middot;&nbsp; LOGOS Robotics Lab</div>
         </div>
         <ul style="margin-top:12px;">
           <li>Applied Machine Learning &middot; Reinforcement Learning Algorithms &middot; Multi-Robot Systems</li>
@@ -203,26 +203,28 @@
   <div class="container">
     <div class="section-label"><h2>Thesis Research</h2><div class="section-label-line"></div></div>
     <div class="thesis-card">
-      <div class="tc-eyebrow">MS Thesis &middot; Arizona State University &middot; 2024&ndash;2026</div>
-      <h3>Improving Vision-Language Action Models Alignment Using Human Preference</h3>
+      <div class="tc-eyebrow">MS Thesis &middot; Arizona State University &middot; Approved April 2026</div>
+      <h3>Vision-Language Models as Proxies for Human Judgment of Robot Motion Legibility</h3>
       <div class="tc-meta">
         <span>&#127891; Advisor: Prof. Nakul Gopalan</span>
-        <span>&#129302; Logos Robotics Lab, ASU</span>
-        <span>&#127919; Target: ICRA / CoRL</span>
+        <span>&#129302; LOGOS Robotics Lab, ASU</span>
+        <span>&#128101; Committee: Hani ben Amor &middot; Kunal Garg</span>
       </div>
-      <p class="tc-body">This thesis investigates how <strong style="color:#93c5fd">Vision-Language Action (VLA) models</strong> can be aligned with human preference to generate safe, collision-free trajectories for robot manipulation tasks. The core challenge is enabling robots to interpret natural language instructions and visual observations, then produce motor actions that are both task-effective and provably safe.</p>
-      <p class="tc-body">Work includes: implementing VLA architectures (diffusion and autoregressive); testing on the <strong style="color:#93c5fd">LIBERO benchmark</strong>; training manipulation policies end-to-end from pixel observations via camera pipelines; piloting <strong style="color:#93c5fd">sim-to-real deployment on a Franka Emika Panda arm</strong> with real safety interlocks and latency budgets; and generating demonstration datasets through ROS2 &amp; MuJoCo. Also includes a <strong style="color:#93c5fd">Human-in-the-Loop VLM Evaluation Framework</strong> studying whether VLMs can substitute human evaluators (73.1% model-human agreement, 5.1% accuracy gap).</p>
+      <p class="tc-body"><strong style="color:#93c5fd">The core question:</strong> Can AI models like GPT or Gemini watch a robot move and judge whether its intent is clear &mdash; the same way a human observer would? If so, we can automate legibility evaluation and use it to improve robot behavior at scale, without needing human annotations.</p>
+      <p class="tc-body"><strong style="color:#93c5fd">What was built:</strong> A VLM evaluation pipeline that feeds cumulative video frames of robot manipulation to vision-language models at selected timepoints. The model infers the robot&rsquo;s intended goal from partial motion evidence. A prefix-frame prompting strategy was designed so the model sees more of the motion at each step &mdash; measuring how early it can correctly identify the goal. Results were compared against human reference labels across 8 manipulation scenarios.</p>
+      <p class="tc-body"><strong style="color:#93c5fd">Extended to robot learning:</strong> A diffusion policy generates multiple candidate trajectories using different noise seeds. Each candidate is rendered into image frames and scored by a VLM across four behavior dimensions &mdash; <em>legibility, predictability, safety,</em> and <em>grounding</em> &mdash; using behavior-specific prompts. The highest-scoring trajectory is re-executed. This Best-of-K VLM selection improves legibility over unguided policies. Three leading models were benchmarked: <strong style="color:#93c5fd">Gemini 3 Pro, GPT-5.4, and Claude Opus 4.5</strong>.</p>
+      <p class="tc-body"><strong style="color:#93c5fd">Key finding:</strong> Multimodal VLMs capture meaningful goal-inference signals from partial robot motion and can serve as practical proxies for human legibility judgment &mdash; though performance varies on trajectories that are deliberately ambiguous or deceptive.</p>
       <div class="tc-tags">
         <span class="tc-tag">Vision-Language Models</span>
-        <span class="tc-tag">Robot Manipulation</span>
-        <span class="tc-tag">Imitation Learning</span>
-        <span class="tc-tag">Human Preference Alignment</span>
-        <span class="tc-tag">Sim-to-Real Transfer</span>
-        <span class="tc-tag">Safety &amp; Constraints</span>
-        <span class="tc-tag">Franka Emika Arm</span>
-        <span class="tc-tag">LIBERO Benchmark</span>
-        <span class="tc-tag">ROS2 / MuJoCo</span>
+        <span class="tc-tag">Robot Motion Legibility</span>
+        <span class="tc-tag">Goal Inference</span>
+        <span class="tc-tag">Diffusion Policy</span>
+        <span class="tc-tag">Trajectory Ranking</span>
+        <span class="tc-tag">Human-Robot Interaction</span>
+        <span class="tc-tag">Prefix-Frame Prompting</span>
+        <span class="tc-tag">Gemini / GPT / Claude</span>
         <span class="tc-tag">PyTorch / CUDA</span>
+        <span class="tc-tag">Robot Manipulation</span>
       </div>
     </div>
   </div>
